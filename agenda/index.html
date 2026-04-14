@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Semanal - Sebastian Cabelo e Estética</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/agenda.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a class="logo" href="/">Sebastian Cabelo e Estética</a>
+
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+
+            <ul class="nav-list">
+                <li><a href="/home/index.html">Home</a></li>
+                <li><a href="/servicos/index.html">Serviços</a></li>
+                <li><a href="/agenda/index.html">Agenda</a></li>
+                <li><a href="/login/index.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="body1">
+        <div class="agenda-container">
+            <div class="agenda-header-section">
+                <h1>Agenda Semanal</h1>
+                <div class="filter-group">
+                    <label for="professional-filter">Filtrar por Profissional: </label>
+                    <select id="professional-filter">
+                        <option value="todos">Todos</option>
+                        <option value="João">João</option>
+                        <option value="Maria">Maria</option>
+                        <option value="Carlos">Carlos</option>
+                        <option value="Ana">Ana</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="agenda-wrapper">
+                <div class="agenda-grid" id="agenda-grid">
+                    <!-- Javascript will render grid headers and timeslots here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/mobile-navbar.js"></script>
+    <script src="/js/agenda.js"></script>
+</body>
+</html>
