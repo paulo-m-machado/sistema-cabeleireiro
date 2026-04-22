@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Funcionário - Sebastian Cabelo e Estética</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/cadastro.css">
+    <link rel="stylesheet" href="/css/cadastro-funcionario.css">
+</head>
+
+<body>
+    <div class="body2">
+        <header>
+            <nav>
+                <a class="logo" href="/">Sebastian Cabelo e Estética</a>
+
+                <div class="mobile-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+
+                <ul class="nav-list">
+                    <li><a href="/home/index.html">Home</a></li>
+                    <li><a href="/servicos/index.html">Serviços</a></li>
+                    <li><a href="/agenda/index.html">Agenda</a></li>
+                    <li><a href="/login/index.html">Login</a></li>
+                    <li><a href="/cadastro-funcionario/index.html">Cadastro de Funcionário</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="body1 container2"> <!-- Adicionada classe container2 para focar melhor ao topo -->
+        <div class="container container2" style="height: auto; margin-top: 2rem;">
+            <div class="form-image">
+                <!-- Mantendo a mesma imagem, ou você pode substituir por um SVG de equipe/barbearia -->
+                <img src="/img/undraw_barber_utly.svg" alt="background de salão">
+            </div>
+
+            <div class="form">
+                <form id="form-cadastro-funcionario" action="#">
+                    <div class="form-header">
+                        <div class="title">
+                            <h1>Cadastrar Funcionário</h1>
+                        </div>
+                    </div>
+
+                    <div id="mensagem-sucesso" style="display: none; color: green; font-weight: bold; margin-bottom: 1rem; text-align: center;">
+                        Funcionário cadastrado com sucesso!
+                    </div>
+
+                    <div class="input-group">
+                        <div class="input-box">
+                            <label for="nomeCompleto">Nome completo *</label>
+                            <input id="nomeCompleto" type="text" name="nomeCompleto" placeholder="Digite o nome completo" required>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="areaAtuacao">Área de atuação / profissão *</label>
+                            <select id="areaAtuacao" name="areaAtuacao" required>
+                                <option value="" disabled selected>Selecione a profissão</option>
+                                <option value="Cabeleireiro(a)">Cabeleireiro(a)</option>
+                                <option value="Maquiador(a)">Maquiador(a)</option>
+                                <option value="Esteticista">Esteticista</option>
+                                <option value="Manicure">Manicure</option>
+                                <option value="Barbeiro(a)">Barbeiro(a)</option>
+                                <option value="Designer de sobrancelhas">Designer de sobrancelhas</option>
+                                <option value="Outro">Outro</option>
+                            </select>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="emailContato">Email de contato *</label>
+                            <input id="emailContato" type="email" name="emailContato" placeholder="Digite o email" required>
+                            <span id="erro-email" style="display:none; color:red; font-size:12px;">Email inválido</span>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="telefone">Telefone / WhatsApp *</label>
+                            <input id="telefone" type="tel" name="telefone" placeholder="(xx) xxxxx-xxxx" required maxlength="15">
+                        </div>
+
+                        <div class="input-box">
+                            <label for="dataNascimento">Data de nascimento (Opcional)</label>
+                            <input id="dataNascimento" type="date" name="dataNascimento">
+                        </div>
+
+                        <div class="input-box" style="width: 100%;">
+                            <label for="observacoes">Observações (Opcional)</label>
+                            <textarea id="observacoes" name="observacoes" rows="3" placeholder="Informações adicionais..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="botoes-acao">
+                        <div class="continue-button" style="width: 48%;">
+                            <button type="submit" id="btn-salvar" style="width: 100%;">Salvar</button>
+                        </div>
+                        <div class="cancel-button" style="width: 48%;">
+                            <button type="button" id="btn-cancelar" style="width: 100%;">Cancelar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/mobile-navbar.js"></script>
+    <script src="/js/cadastro-funcionario.js"></script>
+</body>
+</html>
