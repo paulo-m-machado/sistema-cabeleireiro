@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sebatian Cabelo e Estética</title>
+    <title>Sebastian Cabelo e Estética</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 
 <body>
     <header>
         <nav>
-            <a class="logo">Sebatian Cabelo e Estética</a>
+            <a class="logo" href="/">Sebastian Cabelo e Estética</a>
 
             <div class="mobile-menu">
                 <div class="line1"></div>
@@ -20,16 +21,138 @@
 
             <ul class="nav-list">
                 <li><a href="/home/index.html">Home</a></li>
-                <li><a href="/servicos/index.html">Serviços</a></li>
-                <li><a href="/agenda/index.html">Agenda</a></li>
                 <li><a href="/login/index.html">Login</a></li>
-                <li><a href="/cadastro-funcionario/index.html">Cadastro de Funcionário</a></li>
-                <li><a href="/historico-cliente/index.html">Histórico de Cliente</a></li>
             </ul>
         </nav>
     </header>
 
-    <main></main>
-    <script src="./js/mobile-navbar.js"></script>
+    <main class="home-main">
+        <!-- 1. Hero Section -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">Sebastian Cabelo e Estética</h1>
+                <p class="hero-subtitle">Beleza com arte. Cuidado com excelência.</p>
+                <div class="hero-line"></div>
+                <div class="hero-buttons">
+                    <a href="../agendamento/index.html" class="btn-outline-white">Agendar Agora</a>
+                    <a href="/servicos/index.html" class="btn-outline-gold">Ver Serviços</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Seção "Por que nos escolher" -->
+        <section class="features-section">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <h3 class="feature-title">Profissionais Especializados</h3>
+                    <p class="feature-desc">Nossa equipe conta com mais de 10 anos de experiência para oferecer o melhor resultado.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                    </div>
+                    <h3 class="feature-title">Produtos Premium</h3>
+                    <p class="feature-desc">Trabalhamos apenas com marcas selecionadas e de alta tecnologia para cuidar dos seus fios.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    </div>
+                    <h3 class="feature-title">Agendamento Fácil</h3>
+                    <p class="feature-desc">Marque seu horário de forma online, rápida e prática em apenas alguns cliques.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Seção "Nossos Serviços em Destaque" -->
+        <section class="services-section">
+            <h2 class="section-title">Nossos Serviços em Destaque</h2>
+            <div class="section-line"></div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3 class="service-title">Corte Feminino</h3>
+                    <p class="service-desc">Cortes modernos, clássicos e personalizados de acordo com o seu estilo.</p>
+                </div>
+                <div class="service-card">
+                    <h3 class="service-title">Coloração e Luzes</h3>
+                    <p class="service-desc">Técnicas avançadas de iluminação para destacar a sua beleza.</p>
+                </div>
+                <div class="service-card">
+                    <h3 class="service-title">Estética Facial</h3>
+                    <p class="service-desc">Limpeza de pele profunda e tratamentos rejuvenescedores.</p>
+                </div>
+                <div class="service-card">
+                    <h3 class="service-title">Manicure & Pedicure</h3>
+                    <p class="service-desc">Cuidados completos para unhas perfeitas e saudáveis.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Seção "Depoimentos" -->
+        <section class="testimonials-section">
+            <h2 class="section-title">O que nossos clientes dizem</h2>
+            <div class="section-line"></div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">AL</div>
+                        <div class="testimonial-info">
+                            <h4>Ana Luiza</h4>
+                            <div class="testimonial-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"O atendimento é impecável! O corte ficou exatamente como eu queria e os produtos usados deixaram meu cabelo maravilhoso."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">CF</div>
+                        <div class="testimonial-info">
+                            <h4>Carlos Ferreira</h4>
+                            <div class="testimonial-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Ambiente extremamente agradável e profissionais muito capacitados. Melhor salão que já frequentei."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">MP</div>
+                        <div class="testimonial-info">
+                            <h4>Mariana Prado</h4>
+                            <div class="testimonial-stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Fiz luzes e o resultado foi surpreendente. A equipe tem um cuidado incrível para não danificar os fios."</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 5. Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Sebastian Cabelo e Estética</h3>
+                <p>📍 Rua das Flores, 123 - Centro, São Paulo</p>
+                <p>📞 (11) 98765-4321</p>
+                <p>🕒 Seg a Sáb: 09h às 20h</p>
+            </div>
+            <div class="footer-col">
+                <h3>Links Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="/servicos/index.html">Nossos Serviços</a></li>
+                    <li><a href="/agendamento/index.html">Agendar Horário</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sebastian Cabelo e Estética. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="/js/mobile-navbar.js"></script>
 </body>
 </html>

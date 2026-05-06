@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento - Sebastian Cabelo e Estética</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/agendamento.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="logo" href="/">Sebastian Cabelo e Estética</a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="/home/index.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-background page-bg-image">
+        <div class="agendamento-container">
+            <!-- Stepper -->
+            <div class="stepper">
+                <div class="step step-1 active">
+                    <div class="step-number">1</div>
+                    <div class="step-text">Serviço</div>
+                </div>
+                <div class="step-separator"></div>
+                <div class="step step-2">
+                    <div class="step-number">2</div>
+                    <div class="step-text">Profissional</div>
+                </div>
+                <div class="step-separator"></div>
+                <div class="step step-3">
+                    <div class="step-number">3</div>
+                    <div class="step-text">Data & Hora</div>
+                </div>
+                <div class="step-separator"></div>
+                <div class="step step-4">
+                    <div class="step-number">4</div>
+                    <div class="step-text">Confirmação</div>
+                </div>
+            </div>
+
+            <div class="etapas-container">
+                <!-- Etapa 1: Serviço -->
+                <div id="etapa-1" class="etapa active">
+                    <h2>Escolha o Serviço</h2>
+                    <div class="filters">
+                        <button class="filter-btn active" data-filter="Todos">Todos</button>
+                        <button class="filter-btn" data-filter="Cabelos">Cabelos</button>
+                        <button class="filter-btn" data-filter="Estética">Estética</button>
+                        <button class="filter-btn" data-filter="Unhas">Unhas</button>
+                        <button class="filter-btn" data-filter="Outros">Outros</button>
+                    </div>
+                    <div id="servicos-grid" class="servicos-grid"></div>
+                    <div class="botoes-navegacao">
+                        <div></div>
+                        <button id="btn-proximo-1" class="btn-primario" disabled>Próximo &rarr;</button>
+                    </div>
+                </div>
+
+                <!-- Etapa 2: Profissional -->
+                <div id="etapa-2" class="etapa" style="display: none;">
+                    <h2>Escolha o Profissional</h2>
+                    <div id="profissionais-grid" class="profissionais-grid"></div>
+                    <div class="botoes-navegacao">
+                        <button class="btn-secundario btn-voltar" data-target="1">&larr; Voltar</button>
+                        <button id="btn-proximo-2" class="btn-primario" disabled>Próximo &rarr;</button>
+                    </div>
+                </div>
+
+                <!-- Etapa 3: Data e Horário -->
+                <div id="etapa-3" class="etapa" style="display: none;">
+                    <h2>Escolha a Data e o Horário</h2>
+                    <div class="data-hora-container">
+                        <div class="data-section">
+                            <label for="data-agendamento">Data:</label>
+                            <input type="date" id="data-agendamento" class="input-dark">
+                        </div>
+                        <div class="horarios-section">
+                            <label>Horários Disponíveis:</label>
+                            <div id="horarios-grid" class="horarios-grid">
+                                <p class="placeholder-text">Selecione uma data primeiro.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="botoes-navegacao">
+                        <button class="btn-secundario btn-voltar" data-target="2">&larr; Voltar</button>
+                        <button id="btn-proximo-3" class="btn-primario" disabled>Próximo &rarr;</button>
+                    </div>
+                </div>
+
+                <!-- Etapa 4: Confirmação -->
+                <div id="etapa-4" class="etapa" style="display: none;">
+                    <h2>Confirmação</h2>
+                    <div class="confirmacao-grid">
+                        <div class="resumo-card">
+                            <h3>Resumo do Agendamento</h3>
+                            <p><strong>Serviço:</strong> <span id="resumo-servico"></span></p>
+                            <p><strong>Profissional:</strong> <span id="resumo-profissional"></span></p>
+                            <p><strong>Data:</strong> <span id="resumo-data"></span></p>
+                            <p><strong>Horário:</strong> <span id="resumo-horario"></span></p>
+                            <p><strong>Preço:</strong> <span id="resumo-preco"></span></p>
+                            <p><strong>Duração:</strong> <span id="resumo-duracao"></span></p>
+                        </div>
+                        <div class="dados-cliente-form">
+                            <h3>Seus Dados</h3>
+                            <div class="input-group">
+                                <input type="text" id="cliente-nome" placeholder="Nome completo *" class="input-dark" required>
+                            </div>
+                            <div class="input-group">
+                                <input type="text" id="cliente-telefone" placeholder="Telefone/WhatsApp *" class="input-dark" required>
+                            </div>
+                            <div class="input-group">
+                                <input type="email" id="cliente-email" placeholder="E-mail" class="input-dark">
+                            </div>
+                            <div class="input-group">
+                                <textarea id="cliente-obs" placeholder="Observações/Alergias" class="input-dark" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="botoes-navegacao">
+                        <button class="btn-secundario btn-voltar" data-target="3">&larr; Voltar</button>
+                        <button id="btn-confirmar" class="btn-confirmar">&check; Confirmar Agendamento</button>
+                    </div>
+                </div>
+
+                <!-- Tela de Sucesso -->
+                <div id="etapa-sucesso" class="etapa text-center" style="display: none;">
+                    <h2 style="color: #2ECC71;">Agendamento Confirmado!</h2>
+                    <div class="linha-dourada"></div>
+                    <p id="mensagem-sucesso" class="sucesso-subtitulo"></p>
+                    <a href="/home/index.html" class="btn-primario btn-home-link">Voltar para a Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/js/mobile-navbar.js"></script>
+    <script src="/js/agendamento.js"></script>
+</body>
+</html>

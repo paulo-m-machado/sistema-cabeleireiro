@@ -1,16 +1,56 @@
 /* Complemento para cadastro de funcionário evitando conflitos */
 
+/* Overrides para o modo claro (página profissional) */
+.form-image {
+    background-color: var(--bg-light);
+}
+
+.form {
+    background-color: var(--bg-light);
+    color: var(--text-light-primary);
+}
+
+.form-header h1::after {
+    background-color: var(--accent-prof);
+}
+
+.input-box input,
 .input-box select,
 .input-box textarea {
     margin: 0.6rem 0;
     padding: 0.8rem 1.2rem;
-    border: none;
+    border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 1px 1px 6px #0000001c;
     font-size: 0.93rem;
-    color: #000000be;
-    appearance: none; /* remove padrão em alguns navegadores */
-    background-color: white;
+    color: var(--text-light-primary);
+    background-color: #fff;
+    transition: 0.3s;
+}
+
+.input-box input:hover,
+.input-box select:hover,
+.input-box textarea:hover {
+    background-color: #fafafa;
+}
+
+.input-box input:focus-visible,
+.input-box select:focus-visible,
+.input-box textarea:focus-visible {
+    outline: none;
+    border-color: var(--accent-prof);
+}
+
+.input-box label {
+    color: var(--text-light-secondary);
+}
+
+.continue-button button {
+    background-color: var(--accent-prof);
+}
+
+.continue-button button:hover {
+    background-color: #463bdf;
 }
 
 .input-box select:hover,
@@ -52,4 +92,19 @@
 
 .form-header .title {
     margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .botoes-acao {
+        flex-direction: column;
+    }
+    .input-box {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
 }

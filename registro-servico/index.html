@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Serviços - Sebastian Cabelo e Estética</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/registro-servico.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="logo" href="/">Sebastian Cabelo e Estética</a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="/home/index.html">Home</a></li>
+                <li><a href="/historico-cliente/index.html">Histórico de Cliente</a></li>
+                <li><a href="/cadastro-funcionario/index.html">Cadastro de Funcionário</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="body1 page-bg-image">
+        <div class="container-main">
+            <div class="page-header">
+                <h1>Gerenciamento de Serviços</h1>
+                <p class="subtitle">Acesso Restrito: Área exclusiva para o gerente.</p>
+                <span class="badge-admin">Nível de Acesso: Gerente</span>
+            </div>
+
+            <!-- Formulário de Cadastro de Novo Serviço -->
+            <section class="form-section" id="section-cadastro-servico">
+                <h2>Cadastro de Novo Serviço</h2>
+                <form id="form-servico">
+                    <input type="hidden" id="servico-id">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="servico-nome">Nome do Serviço *</label>
+                            <input type="text" id="servico-nome" required placeholder="Ex: Corte Feminino Completo">
+                        </div>
+                        <div class="form-group">
+                            <label for="servico-categoria">Categoria *</label>
+                            <select id="servico-categoria" required>
+                                <option value="" disabled selected>Selecione uma categoria</option>
+                                <option value="Cabelos">Cabelos</option>
+                                <option value="Estética">Estética</option>
+                                <option value="Unhas">Unhas</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="servico-descricao">Descrição *</label>
+                            <textarea id="servico-descricao" required placeholder="Detalhes sobre o serviço..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="servico-preco">Preço *</label>
+                            <input type="text" id="servico-preco" required placeholder="Ex: R$ 80,00">
+                        </div>
+                        <div class="form-group">
+                            <label for="servico-duracao">Duração Estimada *</label>
+                            <input type="text" id="servico-duracao" required placeholder="Ex: 1h 30m">
+                        </div>
+                        <div class="form-group">
+                            <label for="servico-profissionais">Profissionais que realizam</label>
+                            <input type="text" id="servico-profissionais" placeholder="Ex: João, Maria">
+                        </div>
+                        <div class="form-group">
+                            <label for="servico-status">Status *</label>
+                            <select id="servico-status" required>
+                                <option value="Ativo">Ativo</option>
+                                <option value="Inativo">Inativo</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="limparFormularioServico()">Limpar Formulário</button>
+                        <button type="submit" class="btn btn-primary" id="btn-salvar-servico">Salvar Serviço</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Formulário de Cadastro de Kit/Promoção -->
+            <section class="form-section" id="section-cadastro-kit">
+                <h2>Cadastro de Kit/Promoção</h2>
+                <form id="form-kit">
+                    <input type="hidden" id="kit-id">
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="kit-nome">Nome do Kit *</label>
+                            <input type="text" id="kit-nome" required placeholder="Ex: Kit Verão Total">
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="kit-descricao">Descrição dos serviços incluídos *</label>
+                            <textarea id="kit-descricao" required placeholder="Ex: Limpeza de pele + Hidratação..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="kit-preco">Preço Promocional *</label>
+                            <input type="text" id="kit-preco" required placeholder="Ex: R$ 150,00">
+                        </div>
+                        <div class="form-group">
+                            <label for="kit-condicoes">Condições</label>
+                            <input type="text" id="kit-condicoes" placeholder="Ex: Válido de Terça a Quinta">
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="limparFormularioKit()">Limpar</button>
+                        <button type="submit" class="btn btn-primary" id="btn-salvar-kit">Salvar Kit</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Listagem de Serviços Cadastrados -->
+            <section class="list-section">
+                <div class="list-header">
+                    <h2>Serviços Cadastrados</h2>
+                    <div class="search-bar">
+                        <input type="text" id="busca-servicos" placeholder="Buscar por nome ou categoria...">
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table id="tabela-servicos">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Categoria</th>
+                                <th>Preço</th>
+                                <th>Duração</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lista-servicos-body">
+                            <!-- Preenchido via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Listagem de Kits Cadastrados -->
+            <section class="list-section">
+                <div class="list-header">
+                    <h2>Kits e Promoções Cadastrados</h2>
+                </div>
+                <div class="kits-grid" id="lista-kits-grid">
+                    <!-- Preenchido via JS -->
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <script src="/js/mobile-navbar.js"></script>
+    <script src="/js/registro-servico.js"></script>
+</body>
+</html>

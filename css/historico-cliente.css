@@ -4,8 +4,6 @@
     justify-content: center;
     align-items: flex-start;
     min-height: 92vh;
-    background: url("../img/ChatGPT\ Image\ 20\ de\ mar.\ de\ 2026\,\ 17_27_06.png") no-repeat center center;
-    background-size: cover;
     padding: 30px 0;
     box-sizing: border-box;
     width: 100%;
@@ -288,5 +286,26 @@
     }
     .form-group.full-width {
         grid-column: 1;
+    }
+    .card-body {
+        grid-template-columns: 1fr;
+    }
+    .acoes-card {
+        flex-direction: column;
+    }
+    .search-box {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .historico-container {
+        padding: 15px;
+    }
+    .modal-content {
+        padding: 15px;
+    }
+    .modal-footer {
+        flex-direction: column;
     }
 }

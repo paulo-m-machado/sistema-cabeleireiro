@@ -31,10 +31,55 @@ nav {
     height: 8vh;
 }
 
-main {
-    background: url("../img/ChatGPT\ Image\ 14\ de\ mar.\ de\ 2026\,\ 17_38_09.png") no-repeat center center;
+:root {
+    --bg-dark: #0f0f0f;
+    --bg-card: #1a1a1a;
+    --bg-hover: #2a2a2a;
+    --border-dark: #333;
+    --border-hover: #444;
+    
+    --text-dark-primary: #eee;
+    --text-dark-secondary: #ccc;
+    --text-dark-muted: #aaa;
+    
+    --bg-light: rgba(247,247,247,0.98);
+    --text-light-primary: #333;
+    --text-light-secondary: #555;
+    
+    --accent-client: #00c6ff;
+    --accent-prof: #584fff;
+    --accent-gold: #D4AF37;
+    --success: #2ECC71;
+    --danger: #ff6363;
+    --danger-hover: #ff4c4c;
+}
+
+body {
+    background-color: var(--bg-dark);
+}
+
+.page-bg-image {
+    background: url("../img/pexels-n-voitkevich-8467970.jpg") no-repeat center center;
     background-size: cover;
-    height: 92vh;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.page-bg-image::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 0;
+}
+
+.page-bg-image > * {
+    position: relative;
+    z-index: 1;
+}
+
+main {
+    /* Removed the hardcoded background here */
 }
 
 .nav-list {
@@ -65,6 +110,12 @@ main {
         overflow-x: hidden;
     }
 
+    nav {
+        height: auto;
+        min-height: 8vh;
+        padding: 10px 0;
+    }
+
     .nav-list{
         position: absolute;
         top: 8vh;
@@ -86,6 +137,12 @@ main {
 
     .mobile-menu{
         display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 16px;
     }
 }
 

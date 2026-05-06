@@ -10,8 +10,17 @@ const scheduleData = [
     { day: 5, time: '08:00', client: 'Paolla Oliveira', professional: 'Maria', service: 'Manicure' },
     { day: 5, time: '15:00', client: 'Alice Braga', professional: 'João', service: 'Luzes' },
     { day: 6, time: '10:00', client: 'Gisele Bündchen', professional: 'Maria', service: 'Manicure' },
-    { day: 6, time: '18:00', client: 'Wagner Moura', professional: 'Ana', service: 'Massagem Relaxante' }
+    { day: 6, time: '18:00', client: 'Wagner Moura', professional: 'Ana', service: 'Massagem Relaxante' },
+    { day: 2, time: '09:00', client: 'Fernanda Costa', professional: 'João', service: 'Corte Feminino Completo' },
+    { day: 3, time: '14:00', client: 'Pedro Alvares', professional: 'Carlos', service: 'Corte Masculino' },
+    { day: 5, time: '11:00', client: 'Isabela Maia', professional: 'Ana', service: 'Limpeza de Pele' }
 ];
+
+const novosAgendamentos = JSON.parse(localStorage.getItem('novosAgendamentos') || '[]');
+novosAgendamentos.forEach(novo => {
+    const jaExiste = scheduleData.some(a => a.client === novo.client && a.day === novo.day && a.time === novo.time);
+    if (!jaExiste) scheduleData.push(novo);
+});
 
 const daysOfWeek = ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
 const startHour = 8;
@@ -64,8 +73,9 @@ function renderDesktopGrid(data) {
                 aptCard.className = `appointment-card Appointment-${apt.professional}`;
                 aptCard.innerHTML = `
                     <strong>${apt.professional}</strong>
-                    <span class="client-name">${apt.client}</span>
-                    <span class="service-name">${apt.service}</span>
+                    <span class="time-slot">${apt.time}</span>
+                    <span class="client-name">👤 ${apt.client}</span>
+                    <span class="service-name">✂️ ${apt.service}</span>
                 `;
                 cell.appendChild(aptCard);
             });
@@ -100,8 +110,8 @@ function renderMobileList(data) {
                 aptCard.innerHTML = `
                     <strong>${apt.professional}</strong>
                     <span class="time-slot">${apt.time}</span>
-                    <span class="client-name" style="margin-top:5px;">Cliente: ${apt.client}</span>
-                    <span class="service-name">Serviço: ${apt.service}</span>
+                    <span class="client-name" style="margin-top:5px;">👤 ${apt.client}</span>
+                    <span class="service-name">✂️ ${apt.service}</span>
                 `;
                 cell.appendChild(aptCard);
             });
@@ -127,6 +137,44 @@ function updateAgenda() {
     } else {
         renderDesktopGrid(filteredData);
     }
+
+    updateStats(filteredData);
+}
+
+function updateStats(data) {
+    document.getElementById('total-badge').innerText = data.length;
+    document.getElementById('stat-total').innerText = data.length;
+
+    const diaHoje = new Date().getDay();
+    const agendamentosHoje = data.filter(apt => apt.day === diaHoje).length;
+    document.getElementById('stat-hoje').innerText = agendamentosHoje;
+
+    const contagemProf = {};
+    data.forEach(apt => {
+        contagemProf[apt.professional] = (contagemProf[apt.professional] || 0) + 1;
+    });
+    let maxCount = 0;
+    let profMaisAtivo = '-';
+    for (const [prof, count] of Object.entries(contagemProf)) {
+        if (count > maxCount) {
+            maxCount = count;
+            profMaisAtivo = prof;
+        }
+    }
+    document.getElementById('stat-prof').innerText = profMaisAtivo;
+
+    let proximoLivre = '-';
+    if (diaHoje >= 1 && diaHoje <= 6) {
+        for (let hour = startHour; hour <= endHour; hour++) {
+            const timeString = `${hour.toString().padStart(2, '0')}:00`;
+            const temAgendamento = data.some(apt => apt.day === diaHoje && apt.time === timeString);
+            if (!temAgendamento) {
+                proximoLivre = timeString;
+                break;
+            }
+        }
+    }
+    document.getElementById('stat-livre').innerText = proximoLivre;
 }
 
 // Event Listeners

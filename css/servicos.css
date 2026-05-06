@@ -3,8 +3,6 @@
     justify-content: center;
     align-items: flex-start;
     min-height: 92vh;
-    background: url("../img/ChatGPT\ Image\ 20\ de\ mar.\ de\ 2026\,\ 17_27_06.png") no-repeat center center;
-    background-size: cover;
     padding: 30px 0;
     box-sizing: border-box;
     width: 100%;
@@ -238,5 +236,25 @@ h2 {
     
     .category-filters {
         justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-container {
+        padding: 15px;
+    }
+    
+    .promos-grid, .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .category-filters {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .filter-btn {
+        font-size: 12px;
+        padding: 6px 12px;
     }
 }

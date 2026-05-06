@@ -100,7 +100,7 @@ function renderPromos() {
         const card = document.createElement('div');
         card.className = 'promo-card';
         card.innerHTML = `
-            <div class="promo-title">✨ ${promo.title}</div>
+            <div class="promo-title">${promo.title}</div>
             <div class="promo-desc">${promo.description}</div>
             <div class="promo-price">${promo.price}</div>
             <div class="promo-conditions">📅 ${promo.conditions}</div>
