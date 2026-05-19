@@ -451,15 +451,25 @@ textarea.input-dark {
     font-style: italic;
 }
 
+@media (max-width: 1024px) {
+    .agendamento-container { padding: 20px; }
+    .servicos-grid, .profissionais-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
-    .servicos-grid {
-        grid-template-columns: 1fr;
-    }
-    .confirmacao-grid {
-        grid-template-columns: 1fr;
-    }
+    .stepper { gap: 5px; }
+    .step-number { width: 32px; height: 32px; font-size: 14px; }
     .stepper .step-text {
         display: none;
+    }
+    .profissionais-grid { grid-template-columns: repeat(2, 1fr); }
+    .horarios-grid { grid-template-columns: repeat(3, 1fr); }
+    .chip-horario { min-height: 44px; }
+
+    .confirmacao-grid {
+        grid-template-columns: 1fr;
     }
     .botoes-navegacao {
         flex-direction: column-reverse;
@@ -472,11 +482,19 @@ textarea.input-dark {
 }
 
 @media (max-width: 480px) {
-    .agendamento-container {
-        padding: 15px;
+    .agendamento-container { padding: 12px; }
+    .servicos-grid { grid-template-columns: 1fr; }
+    .profissionais-grid { grid-template-columns: repeat(2, 1fr); }
+    .horarios-grid { grid-template-columns: repeat(2, 1fr); }
+    .chip-horario { 
+        font-size: 14px; 
+        padding: 10px; 
+        min-height: 44px; 
     }
-    .chip-horario {
-        font-size: 13px;
-        padding: 8px 12px;
+    .botoes-navegacao .btn-primario,
+    .botoes-navegacao .btn-secundario,
+    .botoes-navegacao .btn-confirmar { 
+        min-height: 44px; 
+        font-size: 15px; 
     }
 }

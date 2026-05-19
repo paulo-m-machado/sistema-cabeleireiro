@@ -133,6 +133,14 @@ main {
     .nav-list li {
         margin-left: 0;
         opacity: 0;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo {
+        font-size: clamp(14px, 4vw, 24px);
     }
 
     .mobile-menu{

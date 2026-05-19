@@ -94,17 +94,36 @@
     margin-bottom: 0.5rem;
 }
 
+@media (max-width: 1024px) {
+    .container { width: 90%; }
+    .form-image { display: none; }
+    .form { width: 100%; }
+}
+
 @media (max-width: 768px) {
+    .container { width: 95%; }
     .botoes-acao {
         flex-direction: column;
     }
     .input-box {
         width: 100%;
     }
+    .input-box input,
+    .input-box select,
+    .input-box textarea { 
+        font-size: 16px; 
+        width: 100%; 
+    }
+    .continue-button button,
+    .cancel-button button { 
+        min-height: 44px; 
+        width: 100%; 
+    }
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 1rem;
+        padding: 0.8rem;
     }
+    .form-header h1 { font-size: 20px; }
 }

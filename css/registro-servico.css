@@ -333,24 +333,34 @@ table tr:hover {
 @media (max-width: 1064px) {
     .container-main {
         width: 90%;
+        padding: 20px;
     }
     
     .form-grid {
         grid-template-columns: 1fr;
     }
+
+    .kits-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
+    .container-main { padding: 15px; width: 95%; }
+    .kits-grid { grid-template-columns: 1fr; }
+
     .form-grid {
         grid-template-columns: 1fr;
     }
     
+    .form-grid input,
+    .form-grid select { font-size: 16px; }
+
     .form-actions {
         flex-direction: column;
     }
     
     .form-actions .btn {
         width: 100%;
+        min-height: 44px;
     }
     
     .list-header {
@@ -383,18 +393,21 @@ table tr:hover {
         padding-left: 40%;
         text-align: right;
         min-height: 40px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
     }
     
     td:last-child {
         border-bottom: 0;
-        display: flex;
-        justify-content: flex-end;
         gap: 10px;
     }
     
     td:before {
+        content: attr(data-label);
         position: absolute;
-        top: 15px;
+        top: 50%;
+        transform: translateY(-50%);
         left: 15px;
         width: 35%;
         padding-right: 10px;
@@ -402,11 +415,9 @@ table tr:hover {
         font-weight: bold;
         text-align: left;
     }
-    
-    td:nth-of-type(1):before { content: "Nome"; }
-    td:nth-of-type(2):before { content: "Categoria"; }
-    td:nth-of-type(3):before { content: "Preço"; }
-    td:nth-of-type(4):before { content: "Duração"; }
-    td:nth-of-type(5):before { content: "Status"; }
-    td:nth-of-type(6):before { content: "Ações"; }
+}
+
+@media (max-width: 480px) {
+    .container-main { padding: 10px; width: 100%; border-radius: 0; }
+    .list-header h2 { font-size: 18px; }
 }

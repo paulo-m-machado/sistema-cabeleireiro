@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque Inteligente - Sebastian Cabelo e Estética</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/estoque.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="logo" href="/">Sebastian Cabelo e Estética</a>
+
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+
+            <ul class="nav-list">
+                <li><a href="/home/index.html">Home</a></li>
+                <li><a href="/login/index.html">Login</a></li>
+                <li><a href="/estoque/index.html">Estoque</a></li>
+                <li><a href="/gerente/index.html">Gerente</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="estoque-main page-bg-image">
+        <section class="internal-hero">
+            <h1 class="internal-title">Estoque Inteligente</h1>
+            <p class="internal-subtitle">Controle premium e monitoramento em tempo real</p>
+            <div class="hero-line"></div>
+        </section>
+
+        <!-- Painel de Indicadores -->
+        <section class="indicators-section">
+            <div class="container">
+                <div class="indicators-grid">
+                    <div class="indicator-card skeleton-ready">
+                        <div class="indicator-icon" style="color: var(--accent-client);">📦</div>
+                        <div class="indicator-info">
+                            <span class="indicator-label">Produtos Disponíveis</span>
+                            <span class="indicator-value">342</span>
+                        </div>
+                    </div>
+                    <div class="indicator-card skeleton-ready">
+                        <div class="indicator-icon" style="color: var(--accent-gold);">⚠️</div>
+                        <div class="indicator-info">
+                            <span class="indicator-label">Produtos Críticos</span>
+                            <span class="indicator-value">8</span>
+                        </div>
+                    </div>
+                    <div class="indicator-card skeleton-ready">
+                        <div class="indicator-icon" style="color: var(--danger);">❌</div>
+                        <div class="indicator-info">
+                            <span class="indicator-label">Em Falta</span>
+                            <span class="indicator-value">3</span>
+                        </div>
+                    </div>
+                    <div class="indicator-card skeleton-ready">
+                        <div class="indicator-icon" style="color: var(--success);">💎</div>
+                        <div class="indicator-info">
+                            <span class="indicator-label">Valor Estimado</span>
+                            <span class="indicator-value">R$ 18.250</span>
+                        </div>
+                    </div>
+                    <div class="indicator-card skeleton-ready">
+                        <div class="indicator-icon" style="color: var(--accent-prof);">⭐</div>
+                        <div class="indicator-info">
+                            <span class="indicator-label">Mais Utilizado (Semana)</span>
+                            <span class="indicator-value" style="font-size: 1.2rem;">L'Oréal Absolut</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topo da Listagem -->
+        <section class="inventory-toolbar-section">
+            <div class="container">
+                <div class="inventory-toolbar">
+                    <div class="search-filter-group">
+                        <div class="input-icon-wrapper">
+                            <span>🔍</span>
+                            <input type="text" class="modern-input search-input" placeholder="Pesquisar produto...">
+                        </div>
+                        <select class="modern-select filter-select">
+                            <option value="all">Todas as Categorias</option>
+                            <option value="shampoos">Shampoos</option>
+                            <option value="condicionadores">Condicionadores</option>
+                            <option value="coloracao">Coloração</option>
+                            <option value="estetica">Estética</option>
+                            <option value="descartaveis">Descartáveis</option>
+                        </select>
+                        <select class="modern-select filter-select">
+                            <option value="all">Qualquer Quantidade</option>
+                            <option value="low">Estoque Baixo</option>
+                            <option value="critical">Crítico</option>
+                            <option value="out">Em Falta</option>
+                        </select>
+                    </div>
+                    <button class="btn-primary add-product-btn">+ Novo Produto</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Listagem de Produtos Híbrida -->
+        <section class="inventory-list-section">
+            <div class="container">
+                <div class="hybrid-list-header">
+                    <div class="hybrid-col col-img">Imagem</div>
+                    <div class="hybrid-col col-name">Produto</div>
+                    <div class="hybrid-col col-category">Categoria</div>
+                    <div class="hybrid-col col-qty">Estoque</div>
+                    <div class="hybrid-col col-validity">Validade</div>
+                    <div class="hybrid-col col-supplier">Fornecedor</div>
+                    <div class="hybrid-col col-price">Preço</div>
+                    <div class="hybrid-col col-status">Status</div>
+                    <div class="hybrid-col col-actions">Ações</div>
+                </div>
+
+                <div class="hybrid-list-body" id="inventoryList">
+                    <!-- Produto 1 -->
+                    <div class="hybrid-item skeleton-ready">
+                        <div class="hybrid-col col-img">
+                            <div class="product-img-placeholder">🧴</div>
+                        </div>
+                        <div class="hybrid-col col-name" data-label="Produto">
+                            <strong>Shampoo Absolut Repair</strong>
+                            <small>L'Oréal Professionnel</small>
+                        </div>
+                        <div class="hybrid-col col-category" data-label="Categoria">Shampoos</div>
+                        <div class="hybrid-col col-qty" data-label="Quantidade">
+                            <span class="qty-number">24 un</span>
+                            <div class="stock-level-bar"><div class="fill fill-normal" style="width: 80%;"></div></div>
+                        </div>
+                        <div class="hybrid-col col-validity" data-label="Validade">12/2026</div>
+                        <div class="hybrid-col col-supplier" data-label="Fornecedor">Beleza Premium</div>
+                        <div class="hybrid-col col-price" data-label="Preço">R$ 145,00</div>
+                        <div class="hybrid-col col-status" data-label="Status">
+                            <span class="badge badge-normal">Estoque Normal</span>
+                        </div>
+                        <div class="hybrid-col col-actions" data-label="Ações">
+                            <button class="action-btn edit-btn" title="Editar">✏️</button>
+                            <button class="action-btn delete-btn" title="Remover">🗑️</button>
+                        </div>
+                    </div>
+
+                    <!-- Produto 2 -->
+                    <div class="hybrid-item skeleton-ready">
+                        <div class="hybrid-col col-img">
+                            <div class="product-img-placeholder">🎨</div>
+                        </div>
+                        <div class="hybrid-col col-name" data-label="Produto">
+                            <strong>Tintura Igora Royal 6.0</strong>
+                            <small>Schwarzkopf</small>
+                        </div>
+                        <div class="hybrid-col col-category" data-label="Categoria">Coloração</div>
+                        <div class="hybrid-col col-qty" data-label="Quantidade">
+                            <span class="qty-number">5 un</span>
+                            <div class="stock-level-bar"><div class="fill fill-low" style="width: 30%;"></div></div>
+                        </div>
+                        <div class="hybrid-col col-validity" data-label="Validade">08/2025</div>
+                        <div class="hybrid-col col-supplier" data-label="Fornecedor">Distribuidora SC</div>
+                        <div class="hybrid-col col-price" data-label="Preço">R$ 48,00</div>
+                        <div class="hybrid-col col-status" data-label="Status">
+                            <span class="badge badge-low">Estoque Baixo</span>
+                        </div>
+                        <div class="hybrid-col col-actions" data-label="Ações">
+                            <button class="action-btn edit-btn" title="Editar">✏️</button>
+                            <button class="action-btn delete-btn" title="Remover">🗑️</button>
+                        </div>
+                    </div>
+
+                    <!-- Produto 3 -->
+                    <div class="hybrid-item skeleton-ready">
+                        <div class="hybrid-col col-img">
+                            <div class="product-img-placeholder">💆</div>
+                        </div>
+                        <div class="hybrid-col col-name" data-label="Produto">
+                            <strong>Máscara Nutritive Magistral</strong>
+                            <small>Kérastase</small>
+                        </div>
+                        <div class="hybrid-col col-category" data-label="Categoria">Cremes</div>
+                        <div class="hybrid-col col-qty" data-label="Quantidade">
+                            <span class="qty-number">2 un</span>
+                            <div class="stock-level-bar"><div class="fill fill-critical" style="width: 10%;"></div></div>
+                        </div>
+                        <div class="hybrid-col col-validity" data-label="Validade">10/2024</div>
+                        <div class="hybrid-col col-supplier" data-label="Fornecedor">Luxo Hair Br</div>
+                        <div class="hybrid-col col-price" data-label="Preço">R$ 290,00</div>
+                        <div class="hybrid-col col-status" data-label="Status">
+                            <span class="badge badge-critical">Estoque Crítico</span>
+                        </div>
+                        <div class="hybrid-col col-actions" data-label="Ações">
+                            <button class="action-btn edit-btn" title="Editar">✏️</button>
+                            <button class="action-btn delete-btn" title="Remover">🗑️</button>
+                        </div>
+                    </div>
+
+                    <!-- Produto 4 -->
+                    <div class="hybrid-item skeleton-ready expired-item">
+                        <div class="hybrid-col col-img">
+                            <div class="product-img-placeholder" style="filter: grayscale(1);">🧪</div>
+                        </div>
+                        <div class="hybrid-col col-name" data-label="Produto">
+                            <strong>Ácido Hialurônico Sérum</strong>
+                            <small>Skincare Pro</small>
+                        </div>
+                        <div class="hybrid-col col-category" data-label="Categoria">Estética</div>
+                        <div class="hybrid-col col-qty" data-label="Quantidade">
+                            <span class="qty-number">12 un</span>
+                            <div class="stock-level-bar"><div class="fill fill-normal" style="width: 60%;"></div></div>
+                        </div>
+                        <div class="hybrid-col col-validity" style="color: var(--danger);">03/2024</div>
+                        <div class="hybrid-col col-supplier" data-label="Fornecedor">MedBeleza</div>
+                        <div class="hybrid-col col-price" data-label="Preço">R$ 120,00</div>
+                        <div class="hybrid-col col-status" data-label="Status">
+                            <span class="badge badge-expired">Produto Vencido</span>
+                        </div>
+                        <div class="hybrid-col col-actions" data-label="Ações">
+                            <button class="action-btn edit-btn" title="Editar">✏️</button>
+                            <button class="action-btn delete-btn" title="Remover">🗑️</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Produto 5 -->
+                    <div class="hybrid-item skeleton-ready">
+                        <div class="hybrid-col col-img">
+                            <div class="product-img-placeholder">🧤</div>
+                        </div>
+                        <div class="hybrid-col col-name" data-label="Produto">
+                            <strong>Luvas de Látex P (Cx 100)</strong>
+                            <small>Descarpack</small>
+                        </div>
+                        <div class="hybrid-col col-category" data-label="Categoria">Descartáveis</div>
+                        <div class="hybrid-col col-qty" data-label="Quantidade">
+                            <span class="qty-number">0 un</span>
+                            <div class="stock-level-bar"><div class="fill fill-out" style="width: 0%;"></div></div>
+                        </div>
+                        <div class="hybrid-col col-validity" data-label="Validade">-</div>
+                        <div class="hybrid-col col-supplier" data-label="Fornecedor">MedSul</div>
+                        <div class="hybrid-col col-price" data-label="Preço">R$ 35,00</div>
+                        <div class="hybrid-col col-status" data-label="Status">
+                            <span class="badge badge-urgent">Reposição Urgente</span>
+                        </div>
+                        <div class="hybrid-col col-actions" data-label="Ações">
+                            <button class="action-btn edit-btn" title="Editar">✏️</button>
+                            <button class="action-btn delete-btn" title="Remover">🗑️</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Produto Sofisticado -->
+    <div class="modal-overlay" id="productModal">
+        <div class="modal-content premium-modal">
+            <div class="modal-header">
+                <h2 class="modal-title">Detalhes do Produto</h2>
+                <button class="close-modal" id="closeProductModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="productForm" class="premium-form">
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label>Nome do Produto</label>
+                            <input type="text" class="modern-input" placeholder="Ex: Shampoo Absolut Repair" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Categoria</label>
+                            <select class="modern-select" required>
+                                <option value="">Selecione...</option>
+                                <option value="shampoos">Shampoos</option>
+                                <option value="cremes">Cremes</option>
+                                <option value="coloracao">Coloração</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Fornecedor</label>
+                            <input type="text" class="modern-input" placeholder="Nome do distribuidor">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Quantidade Atual</label>
+                            <input type="number" class="modern-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Validade</label>
+                            <input type="month" class="modern-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Valor de Custo (R$)</label>
+                            <input type="number" step="0.01" class="modern-input">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label>Descrição Curta</label>
+                            <input type="text" class="modern-input" placeholder="Detalhes ou fabricante">
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label>Observações</label>
+                            <textarea class="modern-textarea" rows="3" placeholder="Avisos sobre o produto, lote, etc..."></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn-outline-gold" id="cancelProductBtn">Cancelar</button>
+                        <button type="submit" class="btn-primary">Salvar Produto</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/mobile-navbar.js"></script>
+    <script src="/js/estoque.js"></script>
+</body>
+</html>

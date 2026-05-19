@@ -132,12 +132,12 @@ function renderServicos(filtro = '') {
 
         const tr = document.createElement('tr');
         tr.innerHTML = `
-            <td>${servico.nome}</td>
-            <td><span class="badge ${badgeCategoria}">${servico.categoria}</span></td>
-            <td>${servico.preco}</td>
-            <td>${servico.duracao}</td>
-            <td><span class="badge-status ${statusClass}">${servico.status}</span></td>
-            <td>
+            <td data-label="Nome">${servico.nome}</td>
+            <td data-label="Categoria"><span class="badge ${badgeCategoria}">${servico.categoria}</span></td>
+            <td data-label="Preço">${servico.preco}</td>
+            <td data-label="Duração">${servico.duracao}</td>
+            <td data-label="Status"><span class="badge-status ${statusClass}">${servico.status}</span></td>
+            <td data-label="Ações">
                 <button class="btn btn-action btn-edit" onclick="editarServico(${servico.id})">Editar</button>
                 <button class="btn btn-action btn-delete" onclick="excluirServico(${servico.id})">Excluir</button>
             </td>

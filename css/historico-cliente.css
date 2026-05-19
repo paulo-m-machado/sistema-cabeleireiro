@@ -279,8 +279,18 @@
     padding-top: 20px;
 }
 
-/* Responsividade do modal */
+/* Responsividade do modal e geral */
+@media screen and (max-width: 1024px) {
+    .historico-container { padding: 20px; }
+    .form-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media screen and (max-width: 768px) {
+    .historico-container { padding: 15px; }
+    .search-box input { font-size: 16px; }
+    .search-box button { min-height: 44px; min-width: 44px; }
+    .acoes-card button { min-height: 44px; flex: 1; }
+
     .form-grid {
         grid-template-columns: 1fr;
     }
@@ -299,12 +309,15 @@
 }
 
 @media screen and (max-width: 480px) {
-    .historico-container {
-        padding: 15px;
+    .historico-container { padding: 10px; }
+    .modal-content { 
+        width: 95%; 
+        padding: 15px; 
+        max-height: 85vh; 
+        overflow-y: auto; 
     }
-    .modal-content {
-        padding: 15px;
-    }
+    .modal-footer button { min-height: 44px; }
+
     .modal-footer {
         flex-direction: column;
     }

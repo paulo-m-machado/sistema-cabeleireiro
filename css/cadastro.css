@@ -224,14 +224,14 @@
 
     .input-group{
         flex-direction: column;
-        overflow-y: scroll;
+        overflow-y: visible;
+        max-height: none;
+        padding-right: 0;
         flex-wrap: nowrap;
-        max-height: 10rem;
-        padding-right: 5rem;
     }
 
     .gender-input{
-        margin-top: 2rem;
+        margin-top: 1.5rem;
     }
 
     .gender-group{
@@ -243,14 +243,14 @@
 @media screen and (max-width: 768px) {
     .container {
         width: 95%;
+        padding: 0;
     }
     .form {
         padding: 1.5rem;
+        width: 100%;
     }
-    .input-group {
-        overflow-y: auto;
-        max-height: 60vh;
-        padding-right: 1rem;
+    .input-group input, .input-group select { 
+        font-size: 16px; 
     }
 }
 
@@ -258,10 +258,7 @@
     .form {
         padding: 1rem;
     }
-    .input-group {
-        overflow-y: visible;
-        max-height: none;
-        padding-right: 0;
-        flex-direction: column;
+    .continue-button button, .cancel-button button { 
+        min-height: 44px; 
     }
 }

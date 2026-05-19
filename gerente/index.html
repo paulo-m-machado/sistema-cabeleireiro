@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Gerente - Sebastian Cabelo e Estética</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/gerente.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="logo" href="/">Sebastian Cabelo e Estética</a>
+
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+
+            <ul class="nav-list">
+                <li><a href="/home/index.html">Home</a></li>
+                <li><a href="/login/index.html">Login</a></li>
+                <li><a href="/estoque/index.html">Estoque</a></li>
+                <li><a href="/gerente/index.html">Gerente</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="gerente-main page-bg-image">
+        <section class="internal-hero">
+            <h1 class="internal-title">Painel do Gerente</h1>
+            <p class="internal-subtitle">Visão geral e administração do salão</p>
+            <div class="hero-line"></div>
+        </section>
+
+        <section class="quick-actions-section">
+            <div class="container">
+                <div class="actions-grid">
+                    <a href="/cadastro-funcionario/index.html" class="action-btn"><span class="icon">👤</span> Cadastrar Funcionário</a>
+                    <a href="/estoque/index.html" class="action-btn"><span class="icon">📦</span> Abrir Estoque</a>
+                    <a href="#" class="action-btn"><span class="icon">📊</span> Ver Relatórios</a>
+                    <a href="/historico-cliente/index.html" class="action-btn"><span class="icon">🕒</span> Histórico de Clientes</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="metrics-section">
+            <div class="container">
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon" style="color: var(--accent-client);">📅</div>
+                        <div class="metric-info">
+                            <span class="metric-label">Agendamentos Hoje</span>
+                            <span class="metric-value">24</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="color: var(--accent-prof);">👥</div>
+                        <div class="metric-info">
+                            <span class="metric-label">Clientes Atendidos</span>
+                            <span class="metric-value">12</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="color: var(--success);">💰</div>
+                        <div class="metric-info">
+                            <span class="metric-label">Faturamento Diário</span>
+                            <span class="metric-value">R$ 1.850</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="color: var(--danger);">⚠️</div>
+                        <div class="metric-info">
+                            <span class="metric-label">Estoque Baixo</span>
+                            <span class="metric-value">5 itens</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="color: var(--accent-gold);">✂️</div>
+                        <div class="metric-info">
+                            <span class="metric-label">Em Atendimento</span>
+                            <span class="metric-value">4 Profissionais</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="color: var(--text-dark-primary);">🏆</div>
+                        <div class="metric-info">
+                            <span class="metric-label">Serviço Top Hoje</span>
+                            <span class="metric-value" style="font-size: 1.2rem;">Corte Feminino</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="agenda-section">
+            <div class="container">
+                <h2 class="section-title">Agenda do Dia</h2>
+                <div class="section-line"></div>
+                <div class="table-container">
+                    <table class="modern-table">
+                        <thead>
+                            <tr>
+                                <th>Horário</th>
+                                <th>Cliente</th>
+                                <th>Profissional</th>
+                                <th>Serviço</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Horário">09:00</td>
+                                <td data-label="Cliente">Ana Luiza</td>
+                                <td data-label="Profissional">Carlos Ferreira</td>
+                                <td data-label="Serviço">Corte e Escova</td>
+                                <td data-label="Status"><span class="badge badge-success">Finalizado</span></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Horário">10:30</td>
+                                <td data-label="Cliente">Mariana Prado</td>
+                                <td data-label="Profissional">Júlia Mendes</td>
+                                <td data-label="Serviço">Coloração</td>
+                                <td data-label="Status"><span class="badge badge-warning">Em andamento</span></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Horário">13:00</td>
+                                <td data-label="Cliente">Roberto Carlos</td>
+                                <td data-label="Profissional">Carlos Ferreira</td>
+                                <td data-label="Serviço">Corte Masculino</td>
+                                <td data-label="Status"><span class="badge badge-primary">Confirmado</span></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Horário">14:30</td>
+                                <td data-label="Cliente">Silvia Silva</td>
+                                <td data-label="Profissional">Fernanda Lima</td>
+                                <td data-label="Serviço">Limpeza de Pele</td>
+                                <td data-label="Status"><span class="badge badge-danger">Cancelado</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="performance-section">
+            <div class="container">
+                <h2 class="section-title">Desempenho Semanal</h2>
+                <div class="section-line"></div>
+                
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h3 class="chart-title">Serviços Mais Vendidos</h3>
+                        <div class="bar-chart">
+                            <div class="bar-item">
+                                <span class="bar-label">Corte</span>
+                                <div class="bar-track"><div class="bar-fill" style="width: 80%; background: var(--accent-prof);"></div></div>
+                                <span class="bar-value">80%</span>
+                            </div>
+                            <div class="bar-item">
+                                <span class="bar-label">Coloração</span>
+                                <div class="bar-track"><div class="bar-fill" style="width: 65%; background: var(--accent-client);"></div></div>
+                                <span class="bar-value">65%</span>
+                            </div>
+                            <div class="bar-item">
+                                <span class="bar-label">Estética</span>
+                                <div class="bar-track"><div class="bar-fill" style="width: 45%; background: var(--accent-gold);"></div></div>
+                                <span class="bar-value">45%</span>
+                            </div>
+                            <div class="bar-item">
+                                <span class="bar-label">Manicure</span>
+                                <div class="bar-track"><div class="bar-fill" style="width: 60%; background: var(--success);"></div></div>
+                                <span class="bar-value">60%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-card">
+                        <h3 class="chart-title">Horários Mais Movimentados</h3>
+                        <div class="bar-chart">
+                            <div class="bar-item">
+                                <span class="bar-label">09:00 - 12:00</span>
+                                <div class="bar-track"><div class="bar-fill" style="width: 50%; background: var(--text-dark-primary);"></div></div>
+                            </div>
+                            <div class="bar-item">
+                                <span class="bar-label">12:00 - 15:00</span>
+                                <div class="bar-track"><div class="bar-fill" style="width: 30%; background: var(--text-dark-primary);"></div></div>
+                            </div>
+                            <div class="bar-item">
+                                <span class="bar-label">15:00 - 18:00</span>
+                                <div class="bar-track"><div class="bar-fill" style="width: 90%; background: var(--accent-prof);"></div></div>
+                            </div>
+                            <div class="bar-item">
+                                <span class="bar-label">18:00 - 20:00</span>
+                                <div class="bar-track"><div class="bar-fill" style="width: 70%; background: var(--accent-client);"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="/js/mobile-navbar.js"></script>
+    <script src="/js/gerente.js"></script>
+</body>
+</html>

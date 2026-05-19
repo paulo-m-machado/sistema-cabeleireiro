@@ -126,10 +126,31 @@
     max-width: 100%;
 }
 
+@media (max-width: 768px) {
+    .body1 { 
+        padding: 20px; 
+        align-items: flex-start; 
+        padding-top: 40px; 
+    }
+    .wrapper { 
+        width: 100%; 
+        max-width: 420px; 
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+}
+
 @media (max-width: 480px) {
     .wrapper {
         width: 95%;
         padding: 20px;
         margin: 0 auto;
+        box-sizing: border-box;
+    }
+    .wrapper h1 { font-size: 28px; }
+    .input-box input { font-size: 16px; }
+    .wrapper .btn { 
+        min-height: 44px; 
+        font-size: 15px; 
     }
 }
