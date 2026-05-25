@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Gerente - Sebastian Cabelo e Estética</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="../css/gerente.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="logo" href="/">Sebastian Cabelo e Estética</a>
+
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+
+            <ul class="nav-list">
+                <li><a href="/home/index.html">Home</a></li>
+                <li><a href="/login/index.html">Login</a></li>
+                <li><a href="/estoque/index.html">Estoque</a></li>
+                <li><a href="/gerente/index.html">Gerente</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="gerente-main page-bg-image">
+        <section class="internal-hero">
+            <h1 class="internal-title">Painel do Gerente</h1>
+            <p class="internal-subtitle">Visão geral e administração do salão</p>
+            <div class="hero-line"></div>
+        </section>
+
+        <section class="quick-actions-section">
+            <div class="container">
+                <div class="actions-grid">
+                    <a href="/cadastro-funcionario/index.html" class="action-btn"><span class="icon">👤</span> Cadastrar Funcionário</a>
+                    <a href="/estoque/index.html" class="action-btn"><span class="icon">📦</span> Abrir Estoque</a>
+                    <a href="#" class="action-btn"><span class="icon">📊</span> Ver Relatórios</a>
+                    <a href="/historico-cliente/index.html" class="action-btn"><span class="icon">🕒</span> Histórico de Clientes</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="metrics-section">
+            <div class="container">
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon" style="color: var(--accent-client);">📅</div>
+                        <div class="metric-info">
+                            <span class="metric-label">Agendamentos Hoje</span>
+                            <span class="metric-value">24</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="color: var(--accent-prof);">👥</div>
+                        <div class="metric-info">
+                            <span class="metric-label">Clientes Atendidos</span>
+                            <span class="metric-value">12</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="color: var(--success);">💰</div>
+                        <div class="metric-info">
+                            <span class="metric-label">Faturamento Diário</span>
+                            <span class="metric-value">R$ 1.850</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="color: var(--danger);">⚠️</div>
+                        <div class="metric-info">
+                            <span class="metric-label">Estoque Baixo</span>
+                            <span class="metric-value">5 itens</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="color: var(--accent-gold);">✂️</div>
+                        <div class="metric-info">
+                            <span class="metric-label">Em Atendimento</span>
+                            <span class="metric-value">4 Profissionais</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="color: var(--text-dark-primary);">🏆</div>
+                        <div class="metric-info">
+                            <span class="metric-label">Serviço Top Hoje</span>
+                            <span class="metric-value" style="font-size: 1.2rem;">Corte Feminino</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="agenda-section">
+            <div class="container">
+                <h2 class="section-title">Agenda do Dia</h2>
+                <div class="section-line"></div>
+                <div class="table-container">
+                    <table class="modern-table">
+                        <thead>
+                            <tr>
+                                <th>Horário</th>
+                                <th>Cliente</th>
+                                <th>Profissional</th>
+                                <th>Serviço</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Horário">09:00</td>
+                                <td data-label="Cliente">Ana Luiza</td>
+                                <td data-label="Profissional">Carlos Ferreira</td>
+                                <td data-label="Serviço">Corte e Escova</td>
+                                <td data-label="Status"><span class="badge badge-success">Finalizado</span></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Horário">10:30</td>
+                                <td data-label="Cliente">Mariana Prado</td>
+                                <td data-label="Profissional">Júlia Mendes</td>
+                                <td data-label="Serviço">Coloração</td>
+                                <td data-label="Status"><span class="badge badge-warning">Em andamento</span></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Horário">13:00</td>
+                                <td data-label="Cliente">Roberto Carlos</td>
+                                <td data-label="Profissional">Carlos Ferreira</td>
+                                <td data-label="Serviço">Corte Masculino</td>
+                                <td data-label="Status"><span class="badge badge-primary">Confirmado</span></td>
+                            </tr>
+                            <tr>
+                                <td data-label="Horário">14:30</td>
+                                <td data-label="Cliente">Silvia Silva</td>
+                                <td data-label="Profissional">Fernanda Lima</td>
+                                <td data-label="Serviço">Limpeza de Pele</td>
+                                <td data-label="Status"><span class="badge badge-danger">Cancelado</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="performance-section">
+            <div class="container">
+                <h2 class="section-title">Desempenho Semanal</h2>
+                <div class="section-line"></div>
+                
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h3 class="chart-title">Serviços Mais Vendidos</h3>
+                        <div class="bar-chart">
+                            <div class="bar-item">
+                                <span class="bar-label">Corte</span>
+                                <div class="bar-track"><div class="bar-fill" style="width: 80%; background: var(--accent-prof);"></div></div>
+                                <span class="bar-value">80%</span>
+                            </div>
+                            <div class="bar-item">
+                                <span class="bar-label">Coloração</span>
+                                <div class="bar-track"><div class="bar-fill" style="width: 65%; background: var(--accent-client);"></div></div>
+                                <span class="bar-value">65%</span>
+                            </div>
+                            <div class="bar-item">
+                                <span class="bar-label">Estética</span>
+                                <div class="bar-track"><div class="bar-fill" style="width: 45%; background: var(--accent-gold);"></div></div>
+                                <span class="bar-value">45%</span>
+                            </div>
+                            <div class="bar-item">
+                                <span class="bar-label">Manicure</span>
+                                <div class="bar-track"><div class="bar-fill" style="width: 60%; background: var(--success);"></div></div>
+                                <span class="bar-value">60%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-card">
+                        <h3 class="chart-title">Horários Mais Movimentados</h3>
+                        <div class="bar-chart">
+                            <div class="bar-item">
+                                <span class="bar-label">09:00 - 12:00</span>
+                                <div class="bar-track"><div class="bar-fill" style="width: 50%; background: var(--text-dark-primary);"></div></div>
+                            </div>
+                            <div class="bar-item">
+                                <span class="bar-label">12:00 - 15:00</span>
+                                <div class="bar-track"><div class="bar-fill" style="width: 30%; background: var(--text-dark-primary);"></div></div>
+                            </div>
+                            <div class="bar-item">
+                                <span class="bar-label">15:00 - 18:00</span>
+                                <div class="bar-track"><div class="bar-fill" style="width: 90%; background: var(--accent-prof);"></div></div>
+                            </div>
+                            <div class="bar-item">
+                                <span class="bar-label">18:00 - 20:00</span>
+                                <div class="bar-track"><div class="bar-fill" style="width: 70%; background: var(--accent-client);"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="analytics-section">
+            <div class="container">
+        
+                <!-- Cabeçalho -->
+                <div class="analytics-header">
+                    <h2 class="section-title">Inteligência de Dados</h2>
+                    <div class="section-line"></div>
+                    <p class="analytics-subtitle">
+                        Análise estatística dos 12 meses de operação · Jan–Dez · 1.981 atendimentos registrados
+                    </p>
+                </div>
+        
+                <!-- ═══════════════════════════════════════════════════
+                     BLOCO A — GRÁFICOS
+                ═══════════════════════════════════════════════════ -->
+                <div class="analytics-block">
+                    <div class="block-header">
+                        <span class="block-tag">A</span>
+                        <h3 class="block-title">Gráficos Analíticos</h3>
+                    </div>
+        
+                    <div class="charts-analytics-grid">
+        
+                        <!-- Gráfico 1: Dispersão -->
+                        <div class="chart-card-analytics">
+                            <div class="chart-card-header">
+                                <span class="chart-icon">📈</span>
+                                <div>
+                                    <h4 class="chart-card-title">Dispersão</h4>
+                                    <p class="chart-card-subtitle">Faturamento × Atendimentos</p>
+                                </div>
+                            </div>
+                            <canvas id="chartDispersao"></canvas>
+                            <div class="chart-insight-box">
+                                <span class="insight-icon">💡</span>
+                                <p class="insight-text">
+                                    <strong>Correlação positiva forte:</strong> meses com mais atendimentos geram consistentemente maior faturamento. A relação é quase linear, indicando que cada atendimento adicional representa, em média, <strong>R$ 140 a mais</strong> no resultado mensal. Não há outliers significativos — todos os pontos seguem o mesmo padrão de crescimento.
+                                </p>
+                            </div>
+                        </div>
+        
+                        <!-- Gráfico 2: Série Temporal -->
+                        <div class="chart-card-analytics">
+                            <div class="chart-card-header">
+                                <span class="chart-icon">📅</span>
+                                <div>
+                                    <h4 class="chart-card-title">Série Temporal</h4>
+                                    <p class="chart-card-subtitle">Faturamento Mensal com Tendência</p>
+                                </div>
+                            </div>
+                            <canvas id="chartTemporal"></canvas>
+                            <div class="chart-insight-box">
+                                <span class="insight-icon">💡</span>
+                                <p class="insight-text">
+                                    <strong>Tendência de crescimento consistente</strong> ao longo do ano. O segundo semestre supera o primeiro em todos os meses. Julho é o único mês abaixo da tendência prevista (sazonalidade negativa). Dezembro encerra o ano com pico histórico de <strong>R$ 31.200</strong>, 69% acima do mês mais fraco.
+                                </p>
+                            </div>
+                        </div>
+        
+                        <!-- Gráfico 3: Distribuição de Serviços -->
+                        <div class="chart-card-analytics">
+                            <div class="chart-card-header">
+                                <span class="chart-icon">🍩</span>
+                                <div>
+                                    <h4 class="chart-card-title">Distribuição de Serviços</h4>
+                                    <p class="chart-card-subtitle">Participação por tipo — variável qualitativa</p>
+                                </div>
+                            </div>
+                            <canvas id="chartPizza"></canvas>
+                            <div class="chart-insight-box">
+                                <span class="insight-icon">💡</span>
+                                <p class="insight-text">
+                                    <strong>Corte e Coloração dominam com 61%</strong> do volume total. Serviços de Estética representam apenas 6%, mas possuem o maior ticket unitário. Manicure tem potencial de crescimento com estratégias de pacotes combinados com Escova.
+                                </p>
+                            </div>
+                        </div>
+        
+                    </div><!-- /charts-analytics-grid -->
+                </div><!-- /bloco A -->
+        
+        
+                <!-- ═══════════════════════════════════════════════════
+                     BLOCO B — TABELA TENDÊNCIA CENTRAL
+                ═══════════════════════════════════════════════════ -->
+                <div class="analytics-block">
+                    <div class="block-header">
+                        <span class="block-tag">B</span>
+                        <h3 class="block-title">Medidas de Tendência Central</h3>
+                    </div>
+                    <p class="block-description">
+                        Média, mediana e moda para quatro variáveis quantitativas e uma qualitativa, com interpretação aplicada ao contexto do salão.
+                    </p>
+        
+                    <div class="table-container">
+                        <table class="modern-table stats-table">
+                            <thead>
+                                <tr>
+                                    <th>Variável</th>
+                                    <th>Tipo</th>
+                                    <th>Média</th>
+                                    <th>Mediana</th>
+                                    <th>Moda</th>
+                                    <th>Interpretação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="Variável"><strong>Faturamento Mensal</strong></td>
+                                    <td data-label="Tipo"><span class="badge badge-primary">Quant. Contínua</span></td>
+                                    <td data-label="Média" class="stat-value">R$ 23.317</td>
+                                    <td data-label="Mediana" class="stat-value">R$ 22.750</td>
+                                    <td data-label="Moda" class="stat-muted">Amodal</td>
+                                    <td data-label="Interpretação" class="stat-interpretation">O salão fatura em média R$ 23.317/mês. A mediana de R$ 22.750 indica que metade dos meses ficou abaixo desse valor. A proximidade entre média e mediana (diferença de R$ 567) revela distribuição praticamente simétrica, sem meses extremamente atípicos distorcendo o resultado.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Variável"><strong>Nº de Atendimentos</strong></td>
+                                    <td data-label="Tipo"><span class="badge badge-primary">Quant. Discreta</span></td>
+                                    <td data-label="Média" class="stat-value">171,4</td>
+                                    <td data-label="Mediana" class="stat-value">167</td>
+                                    <td data-label="Moda" class="stat-muted">Amodal</td>
+                                    <td data-label="Interpretação" class="stat-interpretation">Em média, o salão realiza 171 atendimentos por mês. A mediana de 167 (ponto central entre os valores ordenados) confirma que metade dos meses ficou abaixo de 167 atendimentos. A média ligeiramente acima da mediana indica assimetria positiva discreta, puxada pelos meses fortes do 2º semestre.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Variável"><strong>Ticket Médio</strong></td>
+                                    <td data-label="Tipo"><span class="badge badge-primary">Quant. Contínua</span></td>
+                                    <td data-label="Média" class="stat-value">R$ 135,55</td>
+                                    <td data-label="Mediana" class="stat-value">R$ 135,00</td>
+                                    <td data-label="Moda" class="stat-muted">Amodal</td>
+                                    <td data-label="Interpretação" class="stat-interpretation">O gasto médio por atendimento é R$ 135,55. A mediana quase idêntica (R$ 135,00) indica distribuição altamente simétrica — o ticket médio é estável ao longo do ano, variando pouco entre os meses. Isso sugere consistência no mix de serviços vendidos e na precificação.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Variável"><strong>Nota de Satisfação</strong></td>
+                                    <td data-label="Tipo"><span class="badge badge-primary">Quant. Contínua</span></td>
+                                    <td data-label="Média" class="stat-value">4,51 / 5,0</td>
+                                    <td data-label="Mediana" class="stat-value">4,55 / 5,0</td>
+                                    <td data-label="Moda" class="stat-muted">Amodal</td>
+                                    <td data-label="Interpretação" class="stat-interpretation">A satisfação média de 4,51 classifica o salão como "Muito Bom" na escala adotada. A mediana de 4,55 (ligeiramente acima da média) indica que a assimetria é negativa — a maioria dos meses ficou acima da média, e os meses com notas mais baixas (Jan e Jul, com 4,2 e 4,1) puxam a média para baixo.</td>
+                                </tr>
+                                <tr class="row-qualitative">
+                                    <td data-label="Variável"><strong>Serviço Mais Vendido</strong></td>
+                                    <td data-label="Tipo"><span class="badge badge-warning">Qualitativa Nominal</span></td>
+                                    <td data-label="Média" class="stat-muted">N/A</td>
+                                    <td data-label="Mediana" class="stat-muted">N/A</td>
+                                    <td data-label="Moda"><span class="badge badge-success">Coloração (7×)</span></td>
+                                    <td data-label="Interpretação" class="stat-interpretation">Para variáveis qualitativas nominais, apenas a <strong>moda</strong> é aplicável — média e mediana não fazem sentido matemático neste contexto. A moda é "Coloração", que liderou as vendas em 7 dos 12 meses (Fev, Abr, Ago, Set, Nov, Dez e mais um). "Corte" liderou nos 4 meses restantes e "Escova" em 2.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div><!-- /bloco B -->
+        
+        
+                <!-- ═══════════════════════════════════════════════════
+                     BLOCO C — TABELA VARIABILIDADE
+                ═══════════════════════════════════════════════════ -->
+                <div class="analytics-block">
+                    <div class="block-header">
+                        <span class="block-tag">C</span>
+                        <h3 class="block-title">Medidas de Variabilidade</h3>
+                    </div>
+                    <p class="block-description">
+                        Amplitude total, variância e desvio padrão para três variáveis quantitativas selecionadas do bloco B, com interpretação gerencial.
+                    </p>
+        
+                    <div class="table-container">
+                        <table class="modern-table stats-table">
+                            <thead>
+                                <tr>
+                                    <th>Variável</th>
+                                    <th>Amplitude Total</th>
+                                    <th>Variância (σ²)</th>
+                                    <th>Desvio Padrão (σ)</th>
+                                    <th>Interpretação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="Variável"><strong>Faturamento Mensal (R$)</strong><br><small class="stat-muted">Mín: R$ 17.900 · Máx: R$ 31.200</small></td>
+                                    <td data-label="Amplitude Total" class="stat-value highlight-gold">R$ 13.300</td>
+                                    <td data-label="Variância" class="stat-value">15.989.306</td>
+                                    <td data-label="Desvio Padrão" class="stat-value">R$ 3.999</td>
+                                    <td data-label="Interpretação" class="stat-interpretation">O faturamento oscila R$ 13.300 entre o pior (Jul) e o melhor mês (Dez). O desvio padrão de R$ 3.999 indica que, em meses típicos, o resultado fica aproximadamente R$ 4.000 acima ou abaixo da média — variação relevante que justifica planejamento financeiro mensal com reservas de contingência.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Variável"><strong>Nº de Atendimentos</strong><br><small class="stat-muted">Mín: 138 · Máx: 221</small></td>
+                                    <td data-label="Amplitude Total" class="stat-value highlight-gold">83 atend.</td>
+                                    <td data-label="Variância" class="stat-value">654,9</td>
+                                    <td data-label="Desvio Padrão" class="stat-value">25,6 atend.</td>
+                                    <td data-label="Interpretação" class="stat-interpretation">Entre o mês de menor movimento (Jul, 138) e o de maior (Dez, 221) há uma diferença de 83 atendimentos. O desvio de 25,6 significa que a equipe precisa estar preparada para absorver variações de ±26 atendimentos em relação à média de 171. Esse dado orienta escalonamento de pessoal e gestão de agenda.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Variável"><strong>Nota de Satisfação</strong><br><small class="stat-muted">Mín: 4,1 · Máx: 4,9</small></td>
+                                    <td data-label="Amplitude Total" class="stat-value highlight-gold">0,8 pts</td>
+                                    <td data-label="Variância" class="stat-value">0,0617</td>
+                                    <td data-label="Desvio Padrão" class="stat-value">0,248 pts</td>
+                                    <td data-label="Interpretação" class="stat-interpretation">A satisfação varia apenas 0,8 pontos ao longo de todo o ano — a menor amplitude entre as três variáveis. O desvio padrão de 0,248 demonstra que a qualidade percebida pelos clientes é altamente consistente. Mesmo no pior mês (Jul, 4,1) o salão mantém classificação "Bom", evidenciando padrão de atendimento estável.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+        
+                    <!-- Nota metodológica -->
+                    <div class="methodology-note">
+                        <span class="note-icon">📐</span>
+                        <p>Variância calculada como variância populacional: <strong>σ² = Σ(xᵢ − μ)² / n</strong>, onde n = 12 meses. Desvio padrão = √σ².</p>
+                    </div>
+                </div><!-- /bloco C -->
+        
+        
+                <!-- ═══════════════════════════════════════════════════
+                     BLOCO D — TABELA COEFICIENTE DE VARIAÇÃO
+                ═══════════════════════════════════════════════════ -->
+                <div class="analytics-block">
+                    <div class="block-header">
+                        <span class="block-tag">D</span>
+                        <h3 class="block-title">Coeficiente de Variação (CV)</h3>
+                    </div>
+                    <p class="block-description">
+                        O CV permite comparar a variabilidade relativa entre variáveis com unidades diferentes, eliminando o efeito da escala.
+                    </p>
+        
+                    <!-- Fórmula -->
+                    <div class="formula-banner">
+                        <div class="formula-content">
+                            <span class="formula-label">Fórmula</span>
+                            <span class="formula-expression">CV = (σ ÷ μ) × 100</span>
+                        </div>
+                        <div class="formula-legend">
+                            <span>σ = desvio padrão</span>
+                            <span>μ = média</span>
+                            <span>resultado em %</span>
+                        </div>
+                    </div>
+        
+                    <div class="table-container">
+                        <table class="modern-table stats-table cv-table">
+                            <thead>
+                                <tr>
+                                    <th>Variável</th>
+                                    <th>Desvio Padrão (σ)</th>
+                                    <th>Média (μ)</th>
+                                    <th>CV (%)</th>
+                                    <th>Classificação</th>
+                                    <th>Interpretação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="cv-row-max">
+                                    <td data-label="Variável">
+                                        <div class="cv-rank cv-rank-1">1º</div>
+                                        <strong>Faturamento Mensal</strong>
+                                    </td>
+                                    <td data-label="Desvio Padrão" class="stat-value">R$ 3.999</td>
+                                    <td data-label="Média" class="stat-value">R$ 23.317</td>
+                                    <td data-label="CV (%)" class="stat-value cv-pct cv-high">17,15%</td>
+                                    <td data-label="Classificação"><span class="badge badge-warning">⚠ Média</span></td>
+                                    <td data-label="Interpretação" class="stat-interpretation">CV entre 15–30% indica variabilidade moderada. O faturamento é a variável com <strong>maior instabilidade relativa</strong> do conjunto. Meses de baixa sazonalidade (Jul) impactam significativamente o resultado.</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Variável">
+                                        <div class="cv-rank cv-rank-2">2º</div>
+                                        <strong>Nº de Atendimentos</strong>
+                                    </td>
+                                    <td data-label="Desvio Padrão" class="stat-value">25,6</td>
+                                    <td data-label="Média" class="stat-value">171,4</td>
+                                    <td data-label="CV (%)" class="stat-value cv-pct cv-medium">14,94%</td>
+                                    <td data-label="Classificação"><span class="badge badge-warning">⚠ Média</span></td>
+                                    <td data-label="Interpretação" class="stat-interpretation">CV de 14,94% indica variabilidade moderada, próxima ao limiar de 15%. O volume de atendimentos oscila proporcionalmente menos que o faturamento — o mix de serviços premium contribui para ampliar a receita mesmo em meses com menos clientes.</td>
+                                </tr>
+                                <tr class="cv-row-min">
+                                    <td data-label="Variável">
+                                        <div class="cv-rank cv-rank-3">3º</div>
+                                        <strong>Nota de Satisfação</strong>
+                                    </td>
+                                    <td data-label="Desvio Padrão" class="stat-value">0,248</td>
+                                    <td data-label="Média" class="stat-value">4,51</td>
+                                    <td data-label="CV (%)" class="stat-value cv-pct cv-low">5,50%</td>
+                                    <td data-label="Classificação"><span class="badge badge-success">✓ Baixa</span></td>
+                                    <td data-label="Interpretação" class="stat-interpretation">CV abaixo de 15% indica baixa variabilidade. A satisfação do cliente é a variável com <strong>maior estabilidade relativa</strong> — um ponto positivo estratégico. A qualidade do serviço se mantém consistente independentemente do volume de atendimentos ou do mês do ano.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+        
+                    <!-- Cards de conclusão -->
+                    <div class="cv-conclusion-grid">
+                        <div class="cv-conclusion-card cv-conclusion-max">
+                            <div class="conclusion-header">
+                                <span class="conclusion-badge conclusion-badge-max">⚠ Maior Variabilidade</span>
+                            </div>
+                            <h4 class="conclusion-title">Faturamento Mensal</h4>
+                            <p class="conclusion-cv-value">CV = 17,15%</p>
+                            <p class="conclusion-text">
+                                O faturamento apresenta a maior oscilação relativa entre as três variáveis analisadas. A diferença de R$ 13.300 entre julho (pior mês) e dezembro (melhor mês) exige <strong>planejamento financeiro robusto</strong>, com formação de reservas nos meses de alta para cobrir os períodos de baixa sazonalidade. Ações de marketing específicas para julho e o primeiro trimestre podem reduzir esse coeficiente nos próximos anos.
+                            </p>
+                        </div>
+        
+                        <div class="cv-conclusion-card cv-conclusion-min">
+                            <div class="conclusion-header">
+                                <span class="conclusion-badge conclusion-badge-min">✓ Menor Variabilidade</span>
+                            </div>
+                            <h4 class="conclusion-title">Nota de Satisfação</h4>
+                            <p class="conclusion-cv-value">CV = 5,50%</p>
+                            <p class="conclusion-text">
+                                A satisfação dos clientes é a variável mais estável do negócio, com CV de apenas 5,50%. Isso demonstra que a <strong>qualidade do serviço prestado é consistente</strong> ao longo de todo o ano, independentemente do volume de atendimentos ou pressões de demanda. Esse é o ativo mais valioso do salão e deve ser protegido como diferencial competitivo.
+                            </p>
+                        </div>
+                    </div>
+        
+                </div><!-- /bloco D -->
+        
+            </div><!-- /container -->
+        </section>
+    </main>
+
+    <script src="/js/mobile-navbar.js"></script>
+    <script src="/js/gerente.js"></script>
+</body>
+</html>

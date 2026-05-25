@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login - Sebastian Cabelo e Estética</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/login.css">
 </head>
@@ -11,7 +11,7 @@
 <body>
     <header>
         <nav>
-            <a class="logo"href="/">Sebastian Cabelo e Estética</a>
+            <a class="logo" href="/">Sebastian Cabelo e Estética</a>
 
             <div class="mobile-menu">
                 <div class="line1"></div>
@@ -23,27 +23,31 @@
                 <li><a href="/home/index.html">Home</a></li>
                 <li><a href="/login/index.html">Login</a></li>
             </ul>
-        </nav>          
+        </nav>
     </header>
 
     <div class="body1 page-bg-image">
         <div class="wrapper">
-            <form action="">
+            <form>
                 <h1>Login</h1>
+
                 <div class="input-box">
-                    <input type="text" placeholder="Usuário" required>
+                    <input type="text" placeholder="E-mail" required>
                 </div>
 
                 <div class="input-box">
                     <input type="password" placeholder="Senha" required>
                 </div>
 
+                <!-- Mensagem de erro da API -->
+                <p id="msg-erro" style="color: var(--danger); font-size: 0.85rem; margin-bottom: 8px; min-height: 18px;"></p>
+
                 <div class="remember-forgot">
-                    <label ><input type="checkbox">Lembrar senha</label>
+                    <label><input type="checkbox"> Lembrar senha</label>
                     <a href="#">Esqueceu a senha?</a>
                 </div>
-                
-                <button type="submit" class="btn">Logar</button>
+
+                <button type="submit" class="btn">Entrar</button>
 
                 <div class="register-link">
                     <p>Não tem uma conta? <a href="/cadastro/index.html">Cadastre-se</a></p>
@@ -53,5 +57,6 @@
     </div>
 
     <script src="/js/mobile-navbar.js"></script>
+    <script src="/js/login.js"></script>
 </body>
 </html>

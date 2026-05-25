@@ -1,0 +1,167 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model atendimento_produto {
+  id             Int           @id @default(autoincrement())
+  atendimento_id Int?
+  produtos_id    Int?
+  atendimentos   atendimentos? @relation(fields: [atendimento_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "atendimento_produto_ibfk_1")
+  produtos       produtos?     @relation(fields: [produtos_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "atendimento_produto_ibfk_2")
+
+  @@index([atendimento_id], map: "atendimento_id")
+  @@index([produtos_id], map: "produtos_id")
+}
+
+model atendimentos {
+  id                  Int                   @id @default(autoincrement())
+  funcionario_id      Int?
+  cliente_id          Int?
+  servico_id          Int?
+  horario             DateTime              @default(now()) @db.Timestamp(0)
+  duracao             DateTime?             @db.Time(0)
+  foco                Boolean?
+  atendimento_produto atendimento_produto[]
+  funcionarios        funcionarios?         @relation(fields: [funcionario_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "atendimentos_ibfk_1")
+  clientes            clientes?             @relation(fields: [cliente_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "atendimentos_ibfk_2")
+  servicos            servicos?             @relation(fields: [servico_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "atendimentos_ibfk_3")
+
+  @@index([cliente_id], map: "cliente_id")
+  @@index([funcionario_id], map: "funcionario_id")
+  @@index([servico_id], map: "servico_id")
+}
+
+model clientes {
+  id              Int            @id @default(autoincrement())
+  nome            String?        @db.VarChar(255)
+  endereco        String?        @db.Text
+  contato         String?        @db.VarChar(50)
+  data_nascimento DateTime?      @db.Date
+  preferencia_1   Boolean?
+  preferencia_2   Boolean?
+  descricao       String?        @db.Text
+  atendimentos    atendimentos[]
+  vendas          vendas[]
+}
+
+model compra_produto {
+  id         Int       @id @default(autoincrement())
+  compra_id  Int?
+  produto_id Int?
+  compras    compras?  @relation(fields: [compra_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "compra_produto_ibfk_1")
+  produtos   produtos? @relation(fields: [produto_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "compra_produto_ibfk_2")
+
+  @@index([compra_id], map: "compra_id")
+  @@index([produto_id], map: "produto_id")
+}
+
+model compras {
+  id             Int              @id @default(autoincrement())
+  fornecedor_id  Int?
+  valor          Float?           @db.Float
+  quantidade     Float?           @db.Float
+  data_compra    DateTime?        @db.Date
+  data_entrega   DateTime?        @db.Date
+  STATUS         String?          @db.VarChar(50)
+  compra_produto compra_produto[]
+  fornecedores   fornecedores?    @relation(fields: [fornecedor_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "compras_ibfk_1")
+
+  @@index([fornecedor_id], map: "fornecedor_id")
+}
+
+model fornecedores {
+  id                Int           @id @default(autoincrement())
+  cnpj              String?       @db.VarChar(20)
+  nome_fantasia     String?       @db.VarChar(255)
+  descricao         String?       @db.Text
+  data_cadastro     DateTime?     @db.Date
+  STATUS            Boolean?
+  data_cancelamento DateTime?     @db.Date
+  usuario_cadastrou Int?
+  compras           compras[]
+  funcionarios      funcionarios? @relation(fields: [usuario_cadastrou], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "fornecedores_ibfk_1")
+
+  @@index([usuario_cadastrou], map: "usuario_cadastrou")
+}
+
+model funcionarios {
+  id                                                Int            @id @default(autoincrement())
+  nome                                              String?        @db.VarChar(255)
+  endereco                                          String?        @db.Text
+  contato                                           String?        @db.VarChar(50)
+  cpf                                               String?        @db.VarChar(20)
+  data_nascimento                                   DateTime?      @db.Date
+  funcao                                            String?        @db.VarChar(100)
+  disponibilidade                                   String?        @db.Text
+  email                                             String         @unique(map: "email") @db.VarChar(255)
+  senha                                             String         @db.VarChar(255)
+  atendimentos                                      atendimentos[]
+  fornecedores                                      fornecedores[]
+  produtos_produtos_usuario_cadastrouTofuncionarios produtos[]     @relation("produtos_usuario_cadastrouTofuncionarios")
+  produtos_produtos_usuario_alterouTofuncionarios   produtos[]     @relation("produtos_usuario_alterouTofuncionarios")
+  vendas                                            vendas[]
+}
+
+model produtos {
+  id                                                    Int                   @id @default(autoincrement())
+  descricao                                             String?               @db.Text
+  marca                                                 String?               @db.VarChar(100)
+  qtd_estoque                                           Float?                @db.Float
+  qtd_minima                                            Float?                @db.Float
+  qtd_maxima                                            Float?                @db.Float
+  vlr_venda                                             Float?                @db.Float
+  data_inclusao                                         DateTime?             @db.Date
+  data_ultima_venda                                     DateTime?             @db.Date
+  data_alteracao                                        DateTime?             @db.Date
+  usuario_alterou                                       Int?
+  STATUS                                                Boolean?
+  data_cancelamento                                     DateTime?             @db.Date
+  usuario_cadastrou                                     Int?
+  atendimento_produto                                   atendimento_produto[]
+  compra_produto                                        compra_produto[]
+  funcionarios_produtos_usuario_cadastrouTofuncionarios funcionarios?         @relation("produtos_usuario_cadastrouTofuncionarios", fields: [usuario_cadastrou], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "produtos_ibfk_1")
+  funcionarios_produtos_usuario_alterouTofuncionarios   funcionarios?         @relation("produtos_usuario_alterouTofuncionarios", fields: [usuario_alterou], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "produtos_ibfk_2")
+  venda_produto                                         venda_produto[]
+
+  @@index([usuario_alterou], map: "usuario_alterou")
+  @@index([usuario_cadastrou], map: "usuario_cadastrou")
+}
+
+model servicos {
+  id               Int            @id @default(autoincrement())
+  nome             String         @db.VarChar(255)
+  descricao        String?        @db.Text
+  preco            Decimal?       @db.Decimal(10, 2)
+  duracao_estimada DateTime?      @db.Time(0)
+  atendimentos     atendimentos[]
+}
+
+model venda_produto {
+  id         Int       @id @default(autoincrement())
+  venda_id   Int?
+  produto_id Int?
+  vendas     vendas?   @relation(fields: [venda_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "venda_produto_ibfk_1")
+  produtos   produtos? @relation(fields: [produto_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "venda_produto_ibfk_2")
+
+  @@index([produto_id], map: "produto_id")
+  @@index([venda_id], map: "venda_id")
+}
+
+model vendas {
+  id             Int             @id @default(autoincrement())
+  cliente_id     Int?
+  funcionario_id Int?
+  qtd_produto    Float?          @db.Float
+  valor          Float?          @db.Float
+  venda_produto  venda_produto[]
+  clientes       clientes?       @relation(fields: [cliente_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "vendas_ibfk_1")
+  funcionarios   funcionarios?   @relation(fields: [funcionario_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "vendas_ibfk_2")
+
+  @@index([cliente_id], map: "cliente_id")
+  @@index([funcionario_id], map: "funcionario_id")
+}

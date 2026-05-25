@@ -143,7 +143,7 @@ function renderServices(categoryFilter = 'todos') {
                 Realizado por: <span>${professionalsText}</span>
             </div>
             
-            <button class="btn-agendar" onclick="window.location.href='/agenda/index.html'">Agendar</button>
+            <button class="btn-agendar" onclick="window.location.href='/agendamento/index.html'">Agendar</button>
         `;
         servicesGrid.appendChild(card);
     });
