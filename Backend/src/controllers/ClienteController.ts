@@ -15,7 +15,8 @@ export class ClienteController {
   async getAll(req: Request, res: Response): Promise<Response> {
     const clienteService = new ClienteService();
     try {
-      const clientes = await clienteService.getAll();
+      const nome = req.query.nome as string | undefined;
+      const clientes = await clienteService.getAll(nome);
       return res.json(clientes);
     } catch (error: any) {
       return res.status(400).json({ error: error.message });

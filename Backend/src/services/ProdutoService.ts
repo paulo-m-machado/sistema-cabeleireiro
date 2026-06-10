@@ -7,6 +7,7 @@ interface CreateProdutoDTO {
   qtd_minima?: number;
   qtd_maxima?: number;
   vlr_venda?: number;
+  data_validade?: Date;
   data_inclusao?: Date;
   usuario_cadastrou?: number;
   STATUS?: boolean;
@@ -19,6 +20,7 @@ interface UpdateProdutoDTO {
   qtd_minima?: number;
   qtd_maxima?: number;
   vlr_venda?: number;
+  data_validade?: Date;
   data_ultima_venda?: Date;
   data_alteracao?: Date;
   usuario_alterou?: number;

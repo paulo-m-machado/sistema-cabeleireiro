@@ -1,0 +1,346 @@
+/* Reset or overrides for style.css specifically for Home */
+.home-main {
+    height: auto;
+    background: none;
+}
+
+/* Hero Section */
+.hero {
+    height: 90vh;
+    background: url("/bg-salao.jpg") no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.55);
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    padding: 0 20px;
+}
+.hero-title {
+    font-size: clamp(28px, 5vw, 56px);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.hero-subtitle {
+    font-size: clamp(14px, 2vw, 20px);
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+.hero-line {
+    height: 2px;
+    background-color: #D4AF37;
+    width: 80px;
+    margin: 0 auto 30px;
+}
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+.btn-outline-white {
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    border-radius: 0;
+    padding: 14px 36px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.btn-outline-white:hover {
+    background: white;
+    color: #0f0f0f;
+}
+.btn-outline-gold {
+    border: 2px solid #D4AF37;
+    background: transparent;
+    color: #D4AF37;
+    border-radius: 0;
+    padding: 14px 36px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+.btn-outline-gold:hover {
+    background: #D4AF37;
+    color: #0f0f0f;
+}
+
+/* Seção Por que nos escolher */
+.features-section {
+    background: #0f0f0f;
+    color: white;
+    padding: 60px 20px;
+}
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.feature-card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    transition: 0.3s;
+}
+.feature-card:hover {
+    border-color: #D4AF37;
+}
+.feature-icon {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+.feature-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #D4AF37;
+    font-weight: bold;
+}
+.feature-desc {
+    font-size: 0.95rem;
+    color: #ccc;
+    font-weight: 300;
+}
+
+/* Serviços em Destaque */
+.services-section {
+    background: #f7f7f7;
+    padding: 60px 20px;
+}
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.section-line {
+    height: 3px;
+    background-color: #584fff;
+    width: 60px;
+    margin: 0 auto 40px;
+}
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+}
+.service-card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-color: #555;
+}
+.service-title {
+    color: #00c6ff;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.service-desc {
+    font-size: 0.9rem;
+    color: #aaa;
+    flex-grow: 1;
+}
+.btn-center {
+    display: flex;
+    justify-content: center;
+}
+.btn-primary {
+    background-color: #584fff;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+    display: inline-block;
+}
+.btn-primary:hover {
+    background-color: #463bdf;
+}
+
+/* Depoimentos */
+.testimonials-section {
+    background: #0f0f0f;
+    color: white;
+    padding: 60px 20px;
+}
+.testimonials-section .section-title {
+    color: white;
+}
+.testimonials-section .section-line {
+    background-color: #D4AF37;
+}
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.testimonial-card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 24px;
+}
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.testimonial-avatar {
+    width: 50px;
+    height: 50px;
+    background: #333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #D4AF37;
+    font-size: 1.2rem;
+}
+.testimonial-info h4 {
+    margin-bottom: 5px;
+    color: white;
+}
+.testimonial-stars {
+    color: #D4AF37;
+    font-size: 0.9rem;
+}
+.testimonial-text {
+    font-style: italic;
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Footer */
+.footer {
+    background: #0f0f0f;
+    color: #888;
+    padding: 40px 20px 20px;
+    border-top: 1px solid #1a1a1a;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+}
+.footer-col h3 {
+    color: white;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+.footer-col p {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+.footer-links li {
+    margin-bottom: 8px;
+}
+.footer-links a {
+    color: #888;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.footer-links a:hover {
+    color: #D4AF37;
+}
+.footer-bottom {
+    border-top: 1px solid #1a1a1a;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.8rem;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 85vh;
+    }
+    .section-title { font-size: 1.5rem; }
+    .feature-card, .service-card, .testimonial-card { padding: 20px; }
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero-buttons a {
+        width: 80%;
+        max-width: 260px;
+        text-align: center;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: 1fr; }
+    .section-title { font-size: 1.3rem; }
+    .hero-title { 
+        font-size: clamp(22px, 7vw, 40px);
+        letter-spacing: 2px; 
+    }
+    .hero-buttons a {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

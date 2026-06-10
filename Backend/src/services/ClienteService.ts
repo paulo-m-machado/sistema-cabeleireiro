@@ -4,6 +4,7 @@ interface CreateClienteDTO {
   nome?: string;
   endereco?: string;
   contato?: string;
+  email?: string;
   data_nascimento?: Date;
   preferencia_1?: boolean;
   preferencia_2?: boolean;
@@ -22,14 +23,34 @@ interface UpdateClienteDTO {
 
 export class ClienteService {
   async create(data: CreateClienteDTO) {
+    if (data.contato) {
+      const existing = await prisma.clientes.findFirst({
+        where: { contato: data.contato },
+      });
+      if (existing) {
+        return existing;
+      }
+    }
     const cliente = await prisma.clientes.create({
-      data,
+      data: {
+        nome: data.nome,
+        endereco: data.endereco,
+        contato: data.contato,
+        email: data.email,
+        data_nascimento: data.data_nascimento,
+        preferencia_1: data.preferencia_1,
+        preferencia_2: data.preferencia_2,
+        descricao: data.descricao,
+      },
     });
     return cliente;
   }
 
-  async getAll() {
-    const clientes = await prisma.clientes.findMany();
+  async getAll(nome?: string) {
+    const where = nome
+      ? { nome: { contains: nome } }
+      : {};
+    const clientes = await prisma.clientes.findMany({ where });
     return clientes;
   }
 

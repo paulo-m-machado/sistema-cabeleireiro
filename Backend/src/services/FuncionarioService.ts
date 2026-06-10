@@ -6,11 +6,12 @@ interface CreateFuncionarioDTO {
   endereco?: string;
   contato?: string;
   cpf?: string;
-  data_nascimento?: Date;
+  dataNascimento?: string;
   funcao?: string;
   disponibilidade?: string;
   email: string;
   senha: string;
+  observacoes?: string;
 }
 
 interface UpdateFuncionarioDTO {
@@ -18,11 +19,12 @@ interface UpdateFuncionarioDTO {
   endereco?: string;
   contato?: string;
   cpf?: string;
-  data_nascimento?: Date;
+  dataNascimento?: string;
   funcao?: string;
   disponibilidade?: string;
   email?: string;
   senha?: string;
+  observacoes?: string;
 }
 
 export class FuncionarioService {
@@ -39,8 +41,16 @@ export class FuncionarioService {
 
     const funcionario = await prisma.funcionarios.create({
       data: {
-        ...data,
+        nome: data.nome,
+        endereco: data.endereco,
+        contato: data.contato,
+        cpf: data.cpf,
+        data_nascimento: data.dataNascimento ? new Date(data.dataNascimento) : undefined,
+        funcao: data.funcao,
+        disponibilidade: data.disponibilidade,
+        email: data.email,
         senha: hashedPassword,
+        observacoes: data.observacoes,
       },
     });
     
@@ -61,6 +71,7 @@ export class FuncionarioService {
         endereco: true,
         data_nascimento: true,
         disponibilidade: true,
+        observacoes: true,
       }
     });
     return funcionarios;
@@ -79,6 +90,7 @@ export class FuncionarioService {
         endereco: true,
         data_nascimento: true,
         disponibilidade: true,
+        observacoes: true,
       }
     });
     if (!funcionario) {
@@ -88,11 +100,27 @@ export class FuncionarioService {
   }
 
   async update(id: number, data: UpdateFuncionarioDTO) {
-    const dataToUpdate = { ...data };
+    const dataToUpdate: any = {
+      nome: data.nome,
+      endereco: data.endereco,
+      contato: data.contato,
+      cpf: data.cpf,
+      data_nascimento: data.dataNascimento ? new Date(data.dataNascimento) : undefined,
+      funcao: data.funcao,
+      disponibilidade: data.disponibilidade,
+      email: data.email,
+      observacoes: data.observacoes,
+    };
 
     if (data.senha) {
       dataToUpdate.senha = await bcrypt.hash(data.senha, 10);
     }
+
+    Object.keys(dataToUpdate).forEach(key => {
+      if (dataToUpdate[key] === undefined) {
+        delete dataToUpdate[key];
+      }
+    });
 
     const funcionario = await prisma.funcionarios.update({
       where: { id },
@@ -105,9 +133,14 @@ export class FuncionarioService {
   }
 
   async delete(id: number) {
-    await prisma.funcionarios.delete({
-      where: { id },
-    });
+    await prisma.$transaction([
+      prisma.atendimentos.updateMany({ where: { funcionario_id: id }, data: { funcionario_id: null } }),
+      prisma.vendas.updateMany({ where: { funcionario_id: id }, data: { funcionario_id: null } }),
+      prisma.fornecedores.updateMany({ where: { usuario_cadastrou: id }, data: { usuario_cadastrou: null } }),
+      prisma.produtos.updateMany({ where: { usuario_cadastrou: id }, data: { usuario_cadastrou: null } }),
+      prisma.produtos.updateMany({ where: { usuario_alterou: id }, data: { usuario_alterou: null } }),
+      prisma.funcionarios.delete({ where: { id } }),
+    ]);
     return { message: 'Funcionário deletado com sucesso.' };
   }
 }

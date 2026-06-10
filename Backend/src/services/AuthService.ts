@@ -1,4 +1,5 @@
 import { prisma } from '../database/prisma';
+import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
 interface LoginData {
@@ -17,7 +18,7 @@ export class AuthService {
       throw new Error('E-mail ou senha incorretos.');
     }
 
-    const senhaValida = senha_pura === funcionario.senha;
+    const senhaValida = await bcrypt.compare(senha_pura, funcionario.senha);
 
     if (!senhaValida) {
       throw new Error('E-mail ou senha incorretos.');

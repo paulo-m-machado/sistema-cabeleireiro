@@ -1,0 +1,6 @@
+2026/06/10-11:24:59.361 1e50 Reusing MANIFEST C:\Users\user\Desktop\SistemaGestao-Novo\Backend\.wwebjs_auth\session\Default\Local Storage\leveldb/MANIFEST-000001
+2026/06/10-11:24:59.368 1e50 Recovering log #10
+2026/06/10-11:24:59.372 1e50 Reusing old log C:\Users\user\Desktop\SistemaGestao-Novo\Backend\.wwebjs_auth\session\Default\Local Storage\leveldb/000010.log 
+2026/06/10-11:35:06.366 4d8c Level-0 table #14: started
+2026/06/10-11:35:06.407 4d8c Level-0 table #14: 14106 bytes OK
+2026/06/10-11:35:06.409 4d8c Delete type=0 #10

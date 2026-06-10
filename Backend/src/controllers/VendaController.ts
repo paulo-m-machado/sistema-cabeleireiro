@@ -54,4 +54,25 @@ export class VendaController {
       return res.status(400).json({ error: error.message });
     }
   }
+
+  async createSale(req: Request, res: Response): Promise<Response> {
+    const vendaService = new VendaService();
+    try {
+      const venda = await vendaService.createSale(req.body);
+      return res.status(201).json(venda);
+    } catch (error: any) {
+      return res.status(400).json({ error: error.message });
+    }
+  }
+
+  async getTopSelling(req: Request, res: Response): Promise<Response> {
+    const vendaService = new VendaService();
+    try {
+      const limit = req.query.limit ? Number(req.query.limit) : 10;
+      const top = await vendaService.getTopSelling(limit);
+      return res.json(top);
+    } catch (error: any) {
+      return res.status(400).json({ error: error.message });
+    }
+  }
 }

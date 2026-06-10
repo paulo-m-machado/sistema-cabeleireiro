@@ -23,6 +23,7 @@ model atendimentos {
   funcionario_id      Int?
   cliente_id          Int?
   servico_id          Int?
+  kit_id              Int?
   horario             DateTime              @default(now()) @db.Timestamp(0)
   duracao             DateTime?             @db.Time(0)
   foco                Boolean?
@@ -30,10 +31,12 @@ model atendimentos {
   funcionarios        funcionarios?         @relation(fields: [funcionario_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "atendimentos_ibfk_1")
   clientes            clientes?             @relation(fields: [cliente_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "atendimentos_ibfk_2")
   servicos            servicos?             @relation(fields: [servico_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "atendimentos_ibfk_3")
+  kits                kits?                 @relation(fields: [kit_id], references: [id], onDelete: Restrict, onUpdate: Restrict, map: "atendimentos_ibfk_4")
 
   @@index([cliente_id], map: "cliente_id")
   @@index([funcionario_id], map: "funcionario_id")
   @@index([servico_id], map: "servico_id")
+  @@index([kit_id], map: "kit_id")
 }
 
 model clientes {
@@ -41,12 +44,34 @@ model clientes {
   nome            String?        @db.VarChar(255)
   endereco        String?        @db.Text
   contato         String?        @db.VarChar(50)
+  email           String?        @db.VarChar(255)
   data_nascimento DateTime?      @db.Date
   preferencia_1   Boolean?
   preferencia_2   Boolean?
   descricao       String?        @db.Text
   atendimentos    atendimentos[]
   vendas          vendas[]
+  historicos      historicos[]
+}
+
+model historicos {
+  id                   Int       @id @default(autoincrement())
+  cliente_id           Int?
+  data_atendimento     DateTime? @db.Date
+  profissional         String?   @db.VarChar(255)
+  tipo_servico         String?   @db.VarChar(255)
+  produtos_utilizados  String?   @db.Text
+  marca_tinta          String?   @db.VarChar(255)
+  formula_coloracao    String?   @db.Text
+  tempo_pausa          Int?
+  corte_realizado      String?   @db.Text
+  preferencias         String?   @db.Text
+  observacoes          String?   @db.Text
+  proxima_recomendacao String?   @db.Text
+  created_at           DateTime? @default(now()) @db.Timestamp(0)
+  clientes             clientes? @relation(fields: [cliente_id], references: [id], onDelete: Cascade, onUpdate: Restrict)
+
+  @@index([cliente_id], map: "historico_cliente_id")
 }
 
 model compra_produto {
@@ -100,6 +125,7 @@ model funcionarios {
   disponibilidade                                   String?        @db.Text
   email                                             String         @unique(map: "email") @db.VarChar(255)
   senha                                             String         @db.VarChar(255)
+  observacoes                                       String?        @db.Text
   atendimentos                                      atendimentos[]
   fornecedores                                      fornecedores[]
   produtos_produtos_usuario_cadastrouTofuncionarios produtos[]     @relation("produtos_usuario_cadastrouTofuncionarios")
@@ -116,6 +142,7 @@ model produtos {
   qtd_maxima                                            Float?                @db.Float
   vlr_venda                                             Float?                @db.Float
   data_inclusao                                         DateTime?             @db.Date
+  data_validade                                         DateTime?             @db.Date
   data_ultima_venda                                     DateTime?             @db.Date
   data_alteracao                                        DateTime?             @db.Date
   usuario_alterou                                       Int?
@@ -139,6 +166,15 @@ model servicos {
   preco            Decimal?       @db.Decimal(10, 2)
   duracao_estimada DateTime?      @db.Time(0)
   atendimentos     atendimentos[]
+}
+
+model kits {
+  id           Int            @id @default(autoincrement())
+  nome         String         @db.VarChar(255)
+  descricao    String?        @db.Text
+  preco        Decimal?       @db.Decimal(10, 2)
+  condicoes    String?        @db.Text
+  atendimentos atendimentos[]
 }
 
 model venda_produto {

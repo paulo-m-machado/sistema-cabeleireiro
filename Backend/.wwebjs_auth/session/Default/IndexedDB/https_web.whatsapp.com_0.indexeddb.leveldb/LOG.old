@@ -1,0 +1,60 @@
+2026/06/10-11:24:59.921 4cf0 Reusing MANIFEST C:\Users\user\Desktop\SistemaGestao-Novo\Backend\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/06/10-11:24:59.921 4cf0 Recovering log #1006
+2026/06/10-11:24:59.957 4cf0 Reusing old log C:\Users\user\Desktop\SistemaGestao-Novo\Backend\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/001006.log 
+2026/06/10-11:27:00.235 521c Level-0 table #1033: started
+2026/06/10-11:27:00.261 521c Level-0 table #1033: 1319351 bytes OK
+2026/06/10-11:27:00.262 521c Delete type=0 #1006
+2026/06/10-11:27:09.878 4cf0 Compacting 1@0 + 1@1 files
+2026/06/10-11:27:09.899 4cf0 Generated table #1034@0: 22674 keys, 487990 bytes
+2026/06/10-11:27:09.902 4cf0 Generated table #1035@0: 190 keys, 42325 bytes
+2026/06/10-11:27:09.902 4cf0 Compacted 1@0 + 1@1 files => 530315 bytes
+2026/06/10-11:27:09.903 4cf0 compacted to: files[ 0 2 33 0 0 0 0 ]
+2026/06/10-11:27:09.903 4cf0 Delete type=2 #1010
+2026/06/10-11:27:09.903 4cf0 Delete type=2 #1033
+2026/06/10-11:27:20.236 4cf0 Compacting 1@1 + 8@2 files
+2026/06/10-11:27:20.266 4cf0 Generated table #1036@1: 7215 keys, 2127612 bytes
+2026/06/10-11:27:20.308 4cf0 Generated table #1037@1: 37237 keys, 2168589 bytes
+2026/06/10-11:27:20.372 4cf0 Generated table #1038@1: 101715 keys, 2252226 bytes
+2026/06/10-11:27:20.432 4cf0 Generated table #1039@1: 97857 keys, 2246817 bytes
+2026/06/10-11:27:20.490 4cf0 Generated table #1040@1: 98191 keys, 2248147 bytes
+2026/06/10-11:27:20.548 4cf0 Generated table #1041@1: 96799 keys, 2245214 bytes
+2026/06/10-11:27:20.602 4cf0 Generated table #1042@1: 86682 keys, 2237670 bytes
+2026/06/10-11:27:20.632 4cf0 Generated table #1043@1: 23985 keys, 2212196 bytes
+2026/06/10-11:27:20.635 4cf0 Generated table #1044@1: 104 keys, 127802 bytes
+2026/06/10-11:27:20.635 4cf0 Compacted 1@1 + 8@2 files => 17866273 bytes
+2026/06/10-11:27:20.636 4cf0 compacted to: files[ 0 1 34 0 0 0 0 ]
+2026/06/10-11:27:20.636 4cf0 Delete type=2 #1022
+2026/06/10-11:27:20.636 4cf0 Delete type=2 #1023
+2026/06/10-11:27:20.636 4cf0 Delete type=2 #1024
+2026/06/10-11:27:20.636 4cf0 Delete type=2 #1025
+2026/06/10-11:27:20.636 4cf0 Delete type=2 #1026
+2026/06/10-11:27:20.636 4cf0 Delete type=2 #1027
+2026/06/10-11:27:20.636 4cf0 Delete type=2 #1028
+2026/06/10-11:27:20.636 4cf0 Delete type=2 #1029
+2026/06/10-11:27:20.637 4cf0 Delete type=2 #1034
+2026/06/10-11:27:23.744 4578 Compacting 1@1 + 12@2 files
+2026/06/10-11:27:23.767 4578 Generated table #1045@1: 2512 keys, 2148515 bytes
+2026/06/10-11:27:23.800 4578 Generated table #1046@1: 1969 keys, 2154623 bytes
+2026/06/10-11:27:23.820 4578 Generated table #1047@1: 2243 keys, 2146499 bytes
+2026/06/10-11:27:23.849 4578 Generated table #1048@1: 2542 keys, 2160163 bytes
+2026/06/10-11:27:23.874 4578 Generated table #1049@1: 10282 keys, 2166281 bytes
+2026/06/10-11:27:23.928 4578 Generated table #1050@1: 30312 keys, 2265037 bytes
+2026/06/10-11:27:23.982 4578 Generated table #1051@1: 26147 keys, 2272013 bytes
+2026/06/10-11:27:24.030 4578 Generated table #1052@1: 22491 keys, 2252979 bytes
+2026/06/10-11:27:24.076 4578 Generated table #1053@1: 19572 keys, 2267348 bytes
+2026/06/10-11:27:24.086 4578 Generated table #1054@1: 5957 keys, 650691 bytes
+2026/06/10-11:27:24.086 4578 Compacted 1@1 + 12@2 files => 20484149 bytes
+2026/06/10-11:27:24.087 4578 compacted to: files[ 0 0 32 0 0 0 0 ]
+2026/06/10-11:27:24.088 4578 Delete type=2 #994
+2026/06/10-11:27:24.088 4578 Delete type=2 #1004
+2026/06/10-11:27:24.088 4578 Delete type=2 #1012
+2026/06/10-11:27:24.088 4578 Delete type=2 #1013
+2026/06/10-11:27:24.088 4578 Delete type=2 #1014
+2026/06/10-11:27:24.088 4578 Delete type=2 #1015
+2026/06/10-11:27:24.088 4578 Delete type=2 #1016
+2026/06/10-11:27:24.088 4578 Delete type=2 #1017
+2026/06/10-11:27:24.088 4578 Delete type=2 #1018
+2026/06/10-11:27:24.088 4578 Delete type=2 #1019
+2026/06/10-11:27:24.088 4578 Delete type=2 #1020
+2026/06/10-11:27:24.088 4578 Delete type=2 #1021
+2026/06/10-11:27:24.088 4578 Delete type=2 #1035
