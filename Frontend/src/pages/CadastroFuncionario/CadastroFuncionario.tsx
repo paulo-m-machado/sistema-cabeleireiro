@@ -52,7 +52,7 @@ export function CadastroFuncionario() {
           </div>
 
           {sucesso && (
-            <div style={{ color: 'green', fontWeight: 'bold', marginBottom: '1rem', textAlign: 'center' }}>
+            <div style={{ color: 'var(--success)', fontWeight: 'bold', marginBottom: '1rem', textAlign: 'center', background: 'rgba(46, 204, 113, 0.1)', padding: '0.75rem', borderRadius: '8px', border: '1px solid rgba(46, 204, 113, 0.2)' }}>
               Funcionário cadastrado com sucesso!
             </div>
           )}
@@ -159,7 +159,7 @@ export function CadastroFuncionario() {
           </div>
           
           {erro && (
-            <p style={{ color: 'var(--danger)', fontSize: '0.85rem', marginTop: '8px', minHeight: '18px' }}>
+            <p style={{ color: 'var(--danger)', fontSize: '0.85rem', marginTop: '8px', minHeight: '18px', background: 'rgba(255, 99, 99, 0.1)', padding: '0.75rem', borderRadius: '8px', border: '1px solid rgba(255, 99, 99, 0.2)' }}>
               {erro}
             </p>
           )}

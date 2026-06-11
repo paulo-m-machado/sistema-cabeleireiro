@@ -27,6 +27,7 @@ interface Produto {
 interface Atendimento {
   horario: string;
   servico_id: number | null;
+  cliente_id: number | null;
 }
 
 interface Servico {
@@ -172,7 +173,7 @@ export function Gerente() {
     }
     const agrupado = new Map<string, number>();
     for (const a of atendimentos) {
-      if (a.servico_id == null) continue;
+      if (a.servico_id == null || a.cliente_id == null) continue;
       const nome = mapaServico.get(a.servico_id) || `Serviço #${a.servico_id}`;
       agrupado.set(nome, (agrupado.get(nome) ?? 0) + 1);
     }
@@ -326,10 +327,10 @@ export function Gerente() {
 
         {/* Pizza */}
         {servicosMaisProcurados.length > 0 && (
-          <div className={styles.graficoCard} style={{ maxWidth: 500, margin: '24px auto' }}>
+          <div className={styles.graficoCard} style={{ maxWidth: 700, margin: '24px auto' }}>
             <h3 className={styles.graficoTitulo}>Serviços Mais Procurados (Pizza)</h3>
             <p className={styles.graficoDesc}>Variável qualitativa: distribuição dos atendimentos por tipo de serviço.</p>
-            <ResponsiveContainer width="100%" height={300}>
+            <ResponsiveContainer width="100%" height={400}>
               <PieChart>
                 <Pie
                   data={servicosMaisProcurados}
@@ -337,7 +338,7 @@ export function Gerente() {
                   nameKey="nome"
                   cx="50%"
                   cy="50%"
-                  outerRadius={100}
+                  outerRadius={140}
                   label={({ nome, percent }) => `${nome} (${(percent * 100).toFixed(0)}%)`}
                 >
                   {servicosMaisProcurados.map((_, i) => (

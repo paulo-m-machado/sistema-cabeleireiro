@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 import api from '../../api/axios';
 import styles from './Login.module.css';
@@ -74,9 +74,6 @@ export function Login() {
             {loading ? 'Entrando...' : 'Entrar'}
           </button>
 
-          <div className={styles['register-link']}>
-            <p>Não tem uma conta? <Link to="/cadastro-funcionario">Cadastre-se</Link></p>
-          </div>
         </form>
       </div>
     </div>

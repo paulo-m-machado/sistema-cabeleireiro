@@ -151,6 +151,7 @@ export function Agendamento() {
     ...kits.map(k => ({ ...k, tipo: 'kit' as const })),
   ].filter(i => {
     if (categoriaAtiva === 'Todos') return true;
+    if (categoriaAtiva === 'Kits') return i.tipo === 'kit';
     if (i.tipo === 'kit') return categoriaAtiva === 'Outros';
     return getCategoria(i.nome) === categoriaAtiva;
   });
@@ -273,7 +274,7 @@ export function Agendamento() {
             <div className={`${styles.etapa} ${styles.active}`}>
               <h2>Escolha o Serviço ou Kit</h2>
               <div className={styles.filters}>
-                {['Todos', 'Cabelos', 'Estética', 'Unhas', 'Outros'].map(cat => (
+                {['Todos', 'Cabelos', 'Estética', 'Unhas', 'Kits', 'Outros'].map(cat => (
                   <button 
                     key={cat} 
                     className={`${styles['filter-btn']} ${categoriaAtiva === cat ? styles.active : ''}`}
