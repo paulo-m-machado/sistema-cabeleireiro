@@ -12,8 +12,7 @@ export function Home() {
             <p className={styles['hero-subtitle']}>Beleza com arte. Cuidado com excelência.</p>
             <div className={styles['hero-line']}></div>
             <div className={styles['hero-buttons']}>
-              <Link to="/agendamento" className={styles['btn-outline-white']}>Agendar Agora</Link>
-              <Link to="/servicos" className={styles['btn-outline-gold']}>Ver Serviços</Link>
+              
             </div>
           </div>
         </section>
